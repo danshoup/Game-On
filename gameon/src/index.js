@@ -4,7 +4,6 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 import './App.css';
-
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import {rootReducer} from './reducers';

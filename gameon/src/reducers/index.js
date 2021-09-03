@@ -1,3 +1,3 @@
-export const rootReducer = (state, action) => {
+export const rootReducer = (state = {}, action) => {
   return state;
 }
