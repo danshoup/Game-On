@@ -1,20 +1,24 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 import './App.css';
 
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware} from 'redux';
+import {rootReducer} from './reducers';
+import {createLogger} from 'redux-logger';
+
+const loggerMIddleware = createLogger();
+
+const store = createStore(rootReducer, applyMiddleware(loggerMIddleware)); 
+
 render(
-  <BrowserRouter>
+  <Provider store = {store}>
     <App />
-  </BrowserRouter>,
+  </Provider>,
   document.querySelector('#root')
 );
 
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
