@@ -37,6 +37,11 @@ const competitionSchema = new Schema({
     type: String,
     required: true
   },
+  status: {
+    type: String,
+    required: true,
+    default: "Challenged"
+  },
   stats: [
     {
       statName: {
