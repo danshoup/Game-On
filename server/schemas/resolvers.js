@@ -1,4 +1,6 @@
 const { User, Category, Competition } = require('../models');
+const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require('apollo-server-express');
 
 // Need to incorporate User model within query
 const resolvers = {
@@ -12,6 +14,11 @@ const resolvers = {
       },
     },
     Mutation: {
+      addUser: async (parent, { name, email, password, zipCode }) => {
+        const user = await User.create({ name, email, password, zipCode });
+        const token = signToken(user);
+        return { token, user };
+      },
       createCompetition: async (parent, args) => {
         const competition = await Competition.create(args);
         return competition;
