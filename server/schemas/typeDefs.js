@@ -19,17 +19,10 @@ const typeDefs = gql`
       location: String!
       organizer: String!
       challenged: String!
-<<<<<<< HEAD
       date: String!
       victor: String
       organizerScore: String
       challengedScore: String
-=======
-      date: Date
-      victor: String!
-      organizerScore: Float
-      challengedScore: Float
->>>>>>> main
       category: String!
   }
 
