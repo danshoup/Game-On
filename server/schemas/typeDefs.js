@@ -34,11 +34,7 @@ const typeDefs = gql`
 
   type Mutation {
     createCompetition(name: String!, location: String!): Competition
-<<<<<<< HEAD
     createStats(_id: ID!, statValue: String!): Competition
-=======
-    createStats(_id: ID!, statValue: Float): Competition
->>>>>>> main
   }
 `;
 
