@@ -3,10 +3,10 @@ const { User, Category, Competition } = require('../models');
 // Need to incorporate User model within query
 const resolvers = {
     Query: {
-        Category: async () => {
+        category: async () => {
           return Category.find({});
         },
-        Competition: async (parent, { _id }) => {
+        competition: async (parent, { _id }) => {
             const params = _id ? { _id } : {};
             return Competition.find(params);
       },
@@ -16,7 +16,7 @@ const resolvers = {
         const competition = await Competition.create(args);
         return competition;
       },
-      createScore: async (parent, { _id, statValueNum }) => {
+      createStats: async (parent, { _id, statValueNum }) => {
         const score = await Competition.findOneAndUpdate(
           { _id },
           { $inc: { [`user${statValueNum}_score`]: 1 } },

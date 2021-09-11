@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, Decimal128 } = require('mongoose');
 
 const competitionSchema = new Schema({
   name: {
@@ -31,7 +31,7 @@ const competitionSchema = new Schema({
     type: Decimal128
   },
   challengedScore:{
-    type: Decimal128
+    type: String
   },
   category: {
     type: String,
@@ -51,13 +51,13 @@ const competitionSchema = new Schema({
         maxlength: 30
       },
       statValue: {
-        type: Decimal128
+        type: String
       }
     },
   ],
 });
 
 
-const competition = model('Competition', competitionSchema);
+const Competition = model('Competition', competitionSchema);
 
 module.exports = Competition;

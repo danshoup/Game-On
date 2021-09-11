@@ -19,10 +19,17 @@ const typeDefs = gql`
       location: String!
       organizer: String!
       challenged: String!
+<<<<<<< HEAD
+      date: String!
+      victor: String
+      organizerScore: String
+      challengedScore: String
+=======
       date: Date
       victor: String!
       organizerScore: Float
       challengedScore: Float
+>>>>>>> main
       category: String!
   }
 
@@ -34,7 +41,11 @@ const typeDefs = gql`
 
   type Mutation {
     createCompetition(name: String!, location: String!): Competition
+<<<<<<< HEAD
+    createStats(_id: ID!, statValue: String!): Competition
+=======
     createStats(_id: ID!, statValue: Float): Competition
+>>>>>>> main
   }
 `;
 
