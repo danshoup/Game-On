@@ -17,7 +17,11 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
+    "apollo-server-express": "^3.3.0",
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
     "graphql": "^15.5.0",
+    "mongoose": "^6.0.5",
     "optional-require": "^1.0.3"
   }
 }
