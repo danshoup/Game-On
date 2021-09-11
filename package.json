@@ -17,14 +17,15 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
+    "apollo": "^2.33.6",
     "apollo-server-express": "^3.3.0",
     "bcrypt": "^5.0.1",
     "express": "^4.17.1",
     "graphql": "^15.5.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.5",
-    "optional-require": "^1.0.3",
-    "apollo": "^2.33.6",
     "nodemon": "^2.0.12",
+    "optional-require": "^1.0.3",
     "react-scripts": "^4.0.3"
   }
 }

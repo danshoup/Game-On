@@ -5,7 +5,7 @@ const typeDefs = gql`
      _id: ID!
     name: String!
     email: String!
-    skills: String!
+    zipCode: String!
   }
 
   type Category {
@@ -26,6 +26,11 @@ const typeDefs = gql`
       category: String!
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type Query {
     user: [User]
     category: [Category]
@@ -35,6 +40,7 @@ const typeDefs = gql`
   type Mutation {
     createCompetition(name: String!, location: String!): Competition
     createStats(_id: ID!, statValue: String!): Competition
+    addUser(name: String!, email: String!, password: String!, zipCode: String!): Auth
   }
 `;
 

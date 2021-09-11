@@ -19,12 +19,11 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  skills: [
+  zipCode:
     {
       type: String,
       trim: true,
-    },
-  ],
+    }
 });
 
 // set up pre-save middleware to create password
