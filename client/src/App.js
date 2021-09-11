@@ -5,12 +5,12 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import HomePage from './components/HomePage';
 import UserPage from './components/UserPage';
 import Login from './components/Login';
-import SignUp from '/components/SignUp';
-import ChallengeCreate from '/components/ChallengeCreate';
-import ChallengePage from '/components/ChallengePage';
-import FindUser from '/components/FindUser';
+import SignUp from './components/SignUp';
+import ChallengeCreate from './components/ChallengeCreate';
+import ChallengePage from './components/ChallengePage';
+import FindUser from './components/FindUser';
 
-const client = new ApollowClient({
+const client = new ApolloClient({
   uri: '/graphql',
   cache: new InMemoryCache(),
 });
