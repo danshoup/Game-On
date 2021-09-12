@@ -1,5 +1,15 @@
 import { gql } from '@apollo/client';
 
+export const CREATE_USER = gql`
+    mutation createUser($_id: String!, $name: String!, $zipCode: String!) {
+        createUser(_id: $id, name: $name, zipCode: $zipCode) {
+            _id
+            name
+            zipCode
+        }
+    }
+    `;
+
 export const CREATE_COMPETITION = gql`
   mutation createCompetition($_id: String!, $name: String!, $location: String!, $category: String! $organizer: String!, $challenged: String!, $date: Date!) {
     createCompetition(_id: $_id, name: $name, location: $location, category: $category, organizer: $organizer, challenged: $challenged, date: $date) {
