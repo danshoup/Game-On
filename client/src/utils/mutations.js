@@ -10,6 +10,15 @@ export const CREATE_USER = gql`
     }
     `;
 
+export const CREATE_CATEGORY = gql`
+    mutation createCategory($_id: String!, $name: String!) {
+        createCategory(_id: $_id, name: $name) {
+            _id
+            name
+        }
+    }
+    `;
+
 export const CREATE_COMPETITION = gql`
   mutation createCompetition($_id: String!, $name: String!, $location: String!, $category: String! $organizer: String!, $challenged: String!, $date: Date!) {
     createCompetition(_id: $_id, name: $name, location: $location, category: $category, organizer: $organizer, challenged: $challenged, date: $date) {
