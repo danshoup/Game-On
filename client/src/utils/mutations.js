@@ -21,26 +21,28 @@ export const CREATE_CATEGORY = gql`
 `;
 
 export const CREATE_COMPETITION = gql`
-  mutation createCompetition($_id: String!, $name: String!, $location: String!, $category: String! $organizer: String!, $challenged: String!, $date: Date!) {
-    createCompetition(_id: $_id, name: $name, location: $location, category: $category, organizer: $organizer, challenged: $challenged, date: $date) {
+  mutation createCompetition($_id: String!, $name: String!, $location: String!, $category: String! $organizer: String!, $challenged: String!, $challengedAccepted: Boolean!, $date: Date!) {
+    createCompetition(_id: $_id, name: $name, location: $location, category: $category, organizer: $organizer, challenged: $challenged, challengedAccepted: $challengedAccepted, date: $date) {
       _id
       name
       location
       category
       organizer
       challenged
+      challengedAccepted
       date
     }
   }
 `;
 
 export const UPDATE_COMPETITION = gql`
-  mutation udpateCompetition($_id: String!, $victor: String!, $organizerScore: String!, $challengedScore: String!, $status: String!) {
-    updateCompetition(_id: $_id, victor: $victor, organizerScore: $organizerScore, challengedScore: $challengedScore, status: $status) {
+  mutation udpateCompetition($_id: String!, $victor: String!, $organizerScore: String!, $challengedScore: String!, $resultsConfirmed: Boolean!, $status: String!) {
+    updateCompetition(_id: $_id, victor: $victor, organizerScore: $organizerScore, challengedScore: $challengedScore, resultsConfirmed: $resultsConfirmed, status: $status) {
       _id
       victor
       organizerScore
       challengedScore
+      resultsConfirmed
       status
     }
   }
