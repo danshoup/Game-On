@@ -11,7 +11,11 @@ const resolvers = {
         competition: async (parent, { _id }) => {
             const params = _id ? { _id } : {};
             return Competition.find(params);
-      },
+        },
+        user: async (parent, {username}) => {
+          const params = username ? { username } : {};
+          return User.find(params);
+        }
     },
     Mutation: {
       addUser: async (parent, { name, email, password, zipCode }) => {
@@ -22,6 +26,20 @@ const resolvers = {
       createCompetition: async (parent, args) => {
         const competition = await Competition.create(args);
         return competition;
+      },
+      updateCompetition: async (parent, args) => {
+        const updatedCompetition = await Competition.findOneAndUpdate(
+        args._id,
+        { ...args},
+        { new: true });
+        return updatedCompetition;
+      },
+      confirmCompetition: async (parent, args) => {
+        const confirmedCompetition = await Competition.findOneAndUpdate(
+          args._id,
+          {...args},
+          { new: true });
+        return confirmedCompetition;
       },
       createStats: async (parent, { _id, statValueNum }) => {
         const score = await Competition.findOneAndUpdate(

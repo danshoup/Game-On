@@ -20,6 +20,10 @@ const competitionSchema = new Schema({
     type: String,
     required: true
   },
+  challengedAccept: {
+    type: Boolean,
+    default: false
+  },
   date: {
     type: Date,
     required: true
@@ -28,7 +32,7 @@ const competitionSchema = new Schema({
     type: String
   },
   organizerScore: {
-    type: Decimal128
+    type: String
   },
   challengedScore:{
     type: String
@@ -41,6 +45,10 @@ const competitionSchema = new Schema({
     type: String,
     required: true,
     default: "Challenged"
+  },
+  resultsConfirmed: {
+    type: Boolean,
+    default: false
   },
   stats: [
     {
