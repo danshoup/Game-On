@@ -1,0 +1,126 @@
+.login-web {
+  align-items: flex-start;
+  background-color: var(--white);
+  display: flex;
+  height: 1080px;
+  justify-content: center;
+  overflow: hidden;
+  width: 1029px;
+}
+
+.overlap-group-4 {
+  height: 1240px;
+  margin-top: -121px;
+  position: relative;
+  width: 2057px;
+}
+
+.x80s-retro {
+  height: 1157px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 83px;
+  width: 2057px;
+}
+
+.input-4 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  left: 848px;
+  min-height: 149px;
+  position: absolute;
+  top: 587px;
+  width: 362px;
+}
+
+.button-large {
+  background-color: var(--dodger-blue);
+  border-radius: 4px;
+  cursor: pointer;
+  height: 48px;
+  left: 845px;
+  pointer-events: auto;
+  position: absolute;
+  top: 778px;
+  transition: all 0.2s ease;
+  width: 368px;
+}
+
+.button-large:hover {
+  box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.2);
+}
+
+.button {
+  left: 153px;
+  letter-spacing: 0;
+  line-height: 12px;
+  position: absolute;
+  text-align: center;
+  top: 18px;
+  white-space: nowrap;
+}
+
+.already-have-an-acco {
+  cursor: pointer;
+  left: 917px;
+  letter-spacing: 0;
+  line-height: 48px;
+  pointer-events: auto;
+  position: absolute;
+  text-align: center;
+  top: 958px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.already-have-an-acco:hover {
+  box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.2);
+}
+
+.game-on-logo-2 {
+  height: 689px;
+  left: 217px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 1623px;
+}
+
+.johndoegmailcom {
+  background-color: transparent;
+  border: 0;
+  height: 24px;
+  left: 856px;
+  letter-spacing: 0;
+  line-height: 24px;
+  padding: 0;
+  position: absolute;
+  top: 621px;
+  white-space: nowrap;
+  width: 348px;
+}
+
+.johndoegmailcom::placeholder {
+  color: #2699fb99;
+}
+
+.password-2 {
+  background-color: transparent;
+  border: 0;
+  height: 24px;
+  left: 856px;
+  letter-spacing: 0;
+  line-height: 24px;
+  padding: 0;
+  position: absolute;
+  top: 702px;
+  white-space: nowrap;
+  width: 348px;
+}
+
+.password-2::placeholder {
+  color: #2699fb99;
+}
+

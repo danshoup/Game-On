@@ -9,6 +9,7 @@ import SignUp from './components/SignUp';
 import ChallengeCreate from './components/ChallengeCreate';
 import ChallengePage from './components/ChallengePage';
 import FindUser from './components/FindUser';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -17,6 +18,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
+    
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
@@ -35,10 +37,12 @@ function App() {
             </Route>
 
             <Route exact path="/userpage">
+
               <UserPage />
             </Route>
 
             <Route exact path="/userpage/:id">
+
               <UserPage />
             </Route>
 
@@ -57,6 +61,7 @@ function App() {
             <Route exact path="/challengepage/:id">
               <ChallengePage />
             </Route>
+            
 
 
           </Switch>
