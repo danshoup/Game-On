@@ -7,29 +7,31 @@ class SignUp extends Component {
         <h1 className="font-weight-bold text-center">Game On
         </h1>
         <FormGroup>
-          <Label>Full Name</Label>
+        <Label></Label>
           <Input type="name" placeholder="Full Name"/>
         </FormGroup>
         <FormGroup>
-          <Label>Email</Label>
+          <Label></Label>
           <Input type="email" placeholder="Email"/>
         </FormGroup>
         <FormGroup>
-          <Label>Zip Code</Label>
+          <Label></Label>
           <Input type="text" placeholder="Zip Code"/>
         </FormGroup>
         <FormGroup>
-          <Label>Password</Label>
+          <Label></Label>
           <Input type="password" placeholder="Password"/>
         </FormGroup>
         <FormGroup>
-          <Label>Confirm Password</Label>
+          <Label></Label>
           <Input type="password" placeholder="Password"/>
         </FormGroup> 
-        <Button className="btn-lg btn-dark btn-block">
+        <FormGroup>
+          <Label></Label>
+        </FormGroup>
+         <Button className="btn-lg btn-dark btn-block">
           Sign Up
-        </Button>
-
+         </Button>
       </Form>
 
     );
