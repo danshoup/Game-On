@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 class ChallengeCreate extends Component {
   render() {
+
     return (
       <Form className="signUp-form">
         <h1 className="font-weight-bold text-center">Matchup
@@ -45,6 +46,9 @@ class ChallengeCreate extends Component {
 
       </Form>
     )
+
+    return <h1>Welcome To Game On; this is the page to create a challenge</h1>
+
   }
 }
 
