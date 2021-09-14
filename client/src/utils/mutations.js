@@ -1,23 +1,24 @@
 import { gql } from '@apollo/client';
 
-export const CREATE_USER = gql`
-    mutation createUser($_id: String!, $name: String!, $zipCode: String!) {
-        createUser(_id: $id, name: $name, zipCode: $zipCode) {
-            _id
-            name
-            zipCode
-        }
+export const ADD_USER = gql`
+  mutation addUser($_id: String!, $name: String!, $email: String!, $zipCode: String!) {
+    createUser(_id: $id, name: $name, zipCode: $zipCode) {
+        _id
+        name
+        email
+        zipCode
     }
-    `;
+  }
+`;
 
 export const CREATE_CATEGORY = gql`
-    mutation createCategory($_id: String!, $name: String!) {
-        createCategory(_id: $_id, name: $name) {
-            _id
-            name
-        }
+  mutation createCategory($_id: String!, $name: String!) {
+    createCategory(_id: $_id, name: $name) {
+        _id
+        name
     }
-    `;
+  }
+`;
 
 export const CREATE_COMPETITION = gql`
   mutation createCompetition($_id: String!, $name: String!, $location: String!, $category: String! $organizer: String!, $challenged: String!, $date: Date!) {
@@ -29,6 +30,27 @@ export const CREATE_COMPETITION = gql`
       organizer
       challenged
       date
+    }
+  }
+`;
+
+export const UPDATE_COMPETITION = gql`
+  mutation udpateCompetition($_id: String!, $victor: String!, $organizerScore: String!, $challengedScore: String!, $status: String!) {
+    updateCompetition(_id: $_id, victor: $victor, organizerScore: $organizerScore, challengedScore: $challengedScore, status: $status) {
+      _id
+      victor
+      organizerScore
+      challengedScore
+      status
+    }
+  }
+`;
+
+export const CONFIRM_COMPETITION = gql`
+  mutation confirmCompetition($_id: String!, $resultsConfirmed: Boolean!) {
+    confirmCompetition(_id: $_id, resultsConfirmed: $resultsConfirmed) {
+      _id
+      resultsConfirmed
     }
   }
 `;
