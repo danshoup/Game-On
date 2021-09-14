@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 
 class FindUser extends Component {
   render() {
-    return <h1>Welcome To Game On</h1>
+    return (
+      <>
+
+        <h1>Hi here is our APP</h1>
+      </>
+    )
+    
+    
   }
 }
 
