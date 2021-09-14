@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+
+
 
 class UserPage extends Component {
   render() {
-    return <h1>Welcome To Game On</h1>
+    return (
+      <>
+        <Container>
+        <div className="d-grid gap-2">
+          <Button href="/signup" variant="danger" size="lg">Signup</Button>
+        </div>
+        </Container>
+      </>
+    )
+    
   }
 }
 
