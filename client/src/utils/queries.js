@@ -28,6 +28,7 @@ export const QUERY_COMPETITION = gql`
         category
         organizer
         challenged
+        challengedAccept
         date
         victor
         organizerScore
@@ -36,6 +37,7 @@ export const QUERY_COMPETITION = gql`
         status
         statName
         statValue
+        resultsConfirmed
     }
   }
 `;
