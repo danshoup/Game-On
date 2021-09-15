@@ -16,20 +16,24 @@ export const LOGIN_USER = gql`
   }
 `;
 
+// firstName - lastName?
 export const ADD_USER = gql`
   mutation addUser(
     $_id: String!, 
     $name: String!, 
-    $email: String!, 
+    $email: String!,
+    $password: String!, 
     $zipCode: String!) {
     createUser(
       _id: $id, 
       name: $name, 
       email: $email,
+      password: $password,
       zipCode: $zipCode) {
         _id
         name
         email
+        password
         zipCode
     }
   }
