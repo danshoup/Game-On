@@ -41,6 +41,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
+    login(email: String!, password: String!): Auth
     createCompetition(name: String!, location: String!, organizer: String!, challenged: String!, date: String!, category: String!): Competition
     updateCompetition(_id: ID!, victor: String, organizerScore: String, challengedScore: String, status: String): Competition
     confirmCompetition(_id: ID!, resultsConfirmed: Boolean!): Competition
