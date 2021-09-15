@@ -16,7 +16,7 @@ class SignUp extends Component {
         </h1>
         <Form.Group>
           <Form.Label></Form.Label>
-          <Form.Control type="name" placeholder="Full Name"/>
+          <Form.Control type="name" placeholder="User Name"/>
         </Form.Group>
         <Form.Group>
           <Form.Label></Form.Label>
