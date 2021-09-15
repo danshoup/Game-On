@@ -15,24 +15,27 @@ class SignUp extends Component {
         <h1 className="font-weight-bold text-center text-white">Game On Sign-Up Page
         </h1>
         <Form.Group>
-          <Form.Label>Full Name</Form.Label>
+          <Form.Label></Form.Label>
           <Form.Control type="name" placeholder="Full Name"/>
         </Form.Group>
         <Form.Group>
-          <Form.Label>Email</Form.Label>
+          <Form.Label></Form.Label>
           <Form.Control type="email" placeholder="Email"/>
         </Form.Group>
         <Form.Group>
-          <Form.Label>Zip Code</Form.Label>
+          <Form.Label></Form.Label>
           <Form.Control type="text" placeholder="Zip Code"/>
         </Form.Group>
         <Form.Group>
-          <Form.Label>Password</Form.Label>
+          <Form.Label></Form.Label>
           <Form.Control type="password" placeholder="Password"/>
         </Form.Group>
         <Form.Group>
-          <Form.Label>Confirm Password</Form.Label>
-          <Form.Control type="password" placeholder="Password"/>
+          <Form.Label></Form.Label>
+          <Form.Control type="password" placeholder="Confirm Password"/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label></Form.Label>
         </Form.Group> 
         <Button className="btn-lg btn-dark btn-block">
           Sign Up
