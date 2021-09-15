@@ -57,19 +57,18 @@ export const CREATE_COMPETITION = gql`
     $_id: String!, 
     $name: String!, 
     $location: String!, 
-    $category: String! 
     $organizer: String!, 
-    $challenged: String!, 
-    $challengedAccepted: Boolean!, 
-    $date: Date!) {
+    $challenged: String!,
+    $date: Date!,
+    $category: String!) {
     createCompetition(
       _id: $_id, 
       name: $name, 
       location: $location, 
-      category: $category, 
       organizer: $organizer, 
       challenged: $challenged, 
-      challengedAccepted: $challengedAccepted, date: $date) {
+      date: $date,
+      category: $category) {
         _id
         name
         location
@@ -88,20 +87,17 @@ export const UPDATE_COMPETITION = gql`
     $victor: String!, 
     $organizerScore: String!, 
     $challengedScore: String!, 
-    $resultsConfirmed: Boolean!, 
     $status: String!) {
     updateCompetition(
       _id: $_id, 
       victor: $victor, 
       organizerScore: $organizerScore, 
       challengedScore: $challengedScore, 
-      resultsConfirmed: $resultsConfirmed, 
       status: $status) {
         _id
         victor
         organizerScore
         challengedScore
-        resultsConfirmed
         status
     }
   }
@@ -123,14 +119,11 @@ export const CONFIRM_COMPETITION = gql`
 export const CREATE_STATS = gql`
   mutation createStats(
     $_id: String!, 
-    $statName: String!, 
     $statValue: String!) {
       createStats(
-        _id: $_id, 
-        statName: $statName, 
+        _id: $_id,  
         statValue: $statValue) {
           _id
-          statName
           statValue
     }
   }
