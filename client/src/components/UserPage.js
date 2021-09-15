@@ -10,7 +10,7 @@ class UserPage extends Component {
       <>
         <Container>
         <div className="d-grid gap-2">
-          <Button href="/signup" variant="danger" size="lg">Signup</Button>
+          <Button href="/ChallengeCreate" variant="danger" size="lg">Create a Challenge!</Button>
         </div>
         </Container>
       </>
