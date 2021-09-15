@@ -31,7 +31,7 @@ class Login extends Component {
                 Don't have an account?  Click here!
               </div>
             </Link>
-            <img className="game-on-logo-2" src="/img/gameonlogo-2@1x.png" />
+            <img className="game-on-logo-2" src="/img/gameonlogo-2@1x.png" alt=""/>
             <input
               className="johndoegmailcom arial-regular-normal-dodger-blue-20px"
               name="johndoegmailcom5"
