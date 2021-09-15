@@ -1,53 +1,75 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
+
 class ChallengeCreate extends Component {
   render() {
 
     return (
-      <Form className="signUp-form">
-        <h1 className="font-weight-bold text-center">Matchup
+      <>
+      <Card>
+      <Card.Img src="/img/862202--1-@1x.png" alt="Card image" />
+        <Card.ImgOverlay>
+
+      <h1 className="text-center text-white">Here is page to Create a Challenge</h1>
+     <Form className="signUp-form text-white">
+        <h1 className="font-weight-bold text-center text-white">Matchup
         </h1>
-        <h6>
+        <h6 className="font-weight-bold text-center text-white">
           IAN H. VS. DANIEL S.
         </h6>
-        <FormGroup>
-          <Label></Label>
-          <Input type="name" placeholder="Sports"/>
-        </FormGroup>
-        <FormGroup>
-          <Label></Label>
-          <Input type="email" placeholder="Pool"/>
-        </FormGroup>
-        <FormGroup>
-          <Label></Label>
-          <Input type="text" placeholder="8-Ball"/>
-        </FormGroup>
-        <FormGroup>
-          <Label></Label>
-          <Input type="text" placeholder="Billiards"/>
-        </FormGroup>
-        <FormGroup>
-        <Label for="exampleSearch"></Label>
-          <Input
+        <Form.Group>
+          <Form.Label></Form.Label>
+          <Form.Control type="name" placeholder="Sports"/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label></Form.Label>
+          <Form.Control type="email" placeholder="Pool"/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label></Form.Label>
+          <Form.Control type="text" placeholder="8-Ball"/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label></Form.Label>
+          <Form.Control type="text" placeholder="Billiards"/>
+        </Form.Group>
+        <Form.Group>
+        <Form.Label for="exampleSearch"></Form.Label>
+          <Form.Control
           type="search"
           name="search"
           id="exampleSearch"
           placeholder="search"
           />
-        </FormGroup>
-        <FormGroup>
-          <Label></Label>
-        </FormGroup>
-        <Button className="btn-lg btn-dark btn-block">
+        </Form.Group>
+        <Form.Group>
+          <Form.Label></Form.Label>
+        </Form.Group>
+        <Button className="btn-lg">
           Create Matchup
          </Button>
        
       
 
       </Form>
-    )
 
-    return <h1>Welcome To Game On; this is the page to create a challenge</h1>
+      </Card.ImgOverlay>
+
+      </Card>
+
+
+
+
+
+
+
+
+
+     
+      </>
+    )
 
   }
 }

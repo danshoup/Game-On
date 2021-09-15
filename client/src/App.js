@@ -1,6 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 import HomePage from './components/HomePage';
 import UserPage from './components/UserPage';
@@ -21,50 +26,67 @@ function App() {
     
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-center align-center min-100-vh bg-primary">
-          <Switch>
+        <div className="flex-column justify-center align-center min-100-vh bg-secondary">
 
-            <Route exact path="/">
-              <HomePage />
-            </Route>
+        <Navbar bg="dark" variant="dark">
+          <Container>
+            <Navbar.Brand href="/HomePage">GameOn</Navbar.Brand>
+            <Nav className="me-auto">
+              <Nav.Link href="/HomePage">Home</Nav.Link>
+              <Nav.Link href="/UserPage">UserPage</Nav.Link>
+              <Nav.Link href="/Login">Login</Nav.Link>
+            </Nav>
+          </Container>
+        </Navbar>
+        
+        <Container fluid>
+          <Row>
+            <Col>
+              <Switch>
 
-            <Route exact path="/signup">
-              <SignUp />
-            </Route>
+                <Route exact path="/">
+                  <HomePage />
+                </Route>
 
-            <Route exact path="/login">
-              <Login />
-            </Route>
+                <Route exact path="/signup">
+                  <SignUp />
+                </Route>
 
-            <Route exact path="/userpage">
+                <Route exact path="/login">
+                  <Login />
+                </Route>
 
-              <UserPage />
-            </Route>
+                <Route exact path="/userpage">
 
-            <Route exact path="/userpage/:id">
+                  <UserPage />
+                </Route>
 
-              <UserPage />
-            </Route>
+                <Route exact path="/userpage/:id">
 
-            <Route exact path="/finduser">
-              <FindUser />
-            </Route>
+                  <UserPage />
+                </Route>
 
-            <Route exact path="/challengecreate">
-              <ChallengeCreate />
-            </Route>
+                <Route exact path="/finduser">
+                  <FindUser />
+                </Route>
 
-            <Route exact path="/challengepage">
-              <ChallengePage />
-            </Route>
+                <Route exact path="/challengecreate">
+                  <ChallengeCreate />
+                </Route>
 
-            <Route exact path="/challengepage/:id">
-              <ChallengePage />
-            </Route>
-            
+                <Route exact path="/challengepage">
+                  <ChallengePage />
+                </Route>
 
+                <Route exact path="/challengepage/:id">
+                  <ChallengePage />
+                </Route>
+              
+              </Switch>
 
-          </Switch>
+            </Col>
+          </Row>
+        </Container>
         </div>
       </Router>
     </ApolloProvider>
