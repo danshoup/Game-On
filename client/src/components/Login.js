@@ -1,10 +1,10 @@
 
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import Input from "./Input";
 import "./LoginWeb.css";
-import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Form from 'react-bootstrap/Form';
 
 
 
@@ -13,40 +13,38 @@ import Button from 'react-bootstrap/Button';
 class Login extends Component {
   render() {
     return (
-      <div className="container-center-horizontal">
-        <form className=" screen" name="form3" action="form3" method="post">
-          <div className="overlap-group-4">
-            <Image src="/img/343962@1x.png" fluid />
-            <div className="input-4">
-              <Input>User Name</Input>
-              <Input className="input2props">User Name</Input>
-            </div>
-            <Link to="/UserPage">
-              <div className="button-large smart-layers-pointers">
-                <Button variant="primary">Link to User Page</Button>{' '}
-              </div>
-            </Link>
-            <Link to="/SignUp">
-              <div className="already-have-an-acco smart-layers-pointers arial-regular-normal-white-22px">
-                Don't have an account?  Click here!
-              </div>
-            </Link>
-            <img className="game-on-logo-2" src="/img/gameonlogo-2@1x.png" alt=""/>
-            <input
-              className="johndoegmailcom arial-regular-normal-dodger-blue-20px"
-              name="johndoegmailcom5"
-              placeholder="email"
-              type="email"
-            />
-            <input
-              className="password-2 arial-regular-normal-dodger-blue-20px"
-              name="password6"
-              placeholder="password"
-              type="password"
-            />
-          </div>
-        </form>
-      </div>
+      <>
+      
+      
+      <Card>
+        <Card.Img src="/img/862202--1-@1x.png" alt="Carad image" />
+        <Card.ImgOverlay>
+        <Card.Img variant="top" src="/img/gameonlogo-2@1x.png" />
+        <Card.Body>
+        <Form>
+          <Form.Group className="mb-3 text-white" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Text className="text-muted">
+              We'll never share your email with anyone else.
+            </Form.Text>
+          </Form.Group>
+
+          <Form.Group className="mb-3 text-white" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" placeholder="Password" />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Login
+          </Button>
+        </Form>
+        </Card.Body>
+        <Card.Body>
+          <Card.Link className="text-center" href="/SignUp">Don't have an account? Click here!</Card.Link>
+        </Card.Body>
+        </Card.ImgOverlay>
+      </Card>
+      </>
     );
   }
 }

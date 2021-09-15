@@ -1,41 +1,48 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Label, FormGroup, Input } from 'react';
+import Card from 'react-bootstrap/Card';
 
 class SignUp extends Component {
   render() {
     return (
       <>
-      <h1>Here is the signup page</h1>
-      {/* <Form className="signUp-form">
-        <h1 className="font-weight-bold text-center">Game On
+      <Card>
+      <Card.Img src="/img/862202--1-@1x.png" alt="Card image" />
+        <Card.ImgOverlay>
+
+      <Form className="signUp-form">
+        <h1 className="font-weight-bold text-center text-white">Game On Sign-Up Page
         </h1>
-        <FormGroup>
-          <Label>Full Name</Label>
-          <Input type="name" placeholder="Full Name"/>
-        </FormGroup>
-        <FormGroup>
-          <Label>Email</Label>
-          <Input type="email" placeholder="Email"/>
-        </FormGroup>
-        <FormGroup>
-          <Label>Zip Code</Label>
-          <Input type="text" placeholder="Zip Code"/>
-        </FormGroup>
-        <FormGroup>
-          <Label>Password</Label>
-          <Input type="password" placeholder="Password"/>
-        </FormGroup>
-        <FormGroup>
-          <Label>Confirm Password</Label>
-          <Input type="password" placeholder="Password"/>
-        </FormGroup> 
+        <Form.Group>
+          <Form.Label>Full Name</Form.Label>
+          <Form.Control type="name" placeholder="Full Name"/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Email</Form.Label>
+          <Form.Control type="email" placeholder="Email"/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Zip Code</Form.Label>
+          <Form.Control type="text" placeholder="Zip Code"/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Password"/>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Confirm Password</Form.Label>
+          <Form.Control type="password" placeholder="Password"/>
+        </Form.Group> 
         <Button className="btn-lg btn-dark btn-block">
           Sign Up
         </Button>
 
-      </Form> */}
+      </Form>
+
+      </Card.ImgOverlay>
+
+      </Card>
       </>
     );
   }
