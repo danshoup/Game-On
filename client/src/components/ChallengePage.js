@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
-import Figure from 'react-bootstrap/Figure'
-import Table from 'react-bootstrap/Table'
 import Dropdown from 'react-bootstrap/Dropdown'
 
 class ChallengePage extends Component {
