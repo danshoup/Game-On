@@ -7,6 +7,8 @@ import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import Auth from './utils/auth';
+
 import HomePage from './components/HomePage';
 import UserPage from './components/UserPage';
 import Login from './components/Login';
@@ -34,7 +36,8 @@ function App() {
             <Nav className="me-auto">
               <Nav.Link href="/HomePage">Home</Nav.Link>
               <Nav.Link href="/UserPage">UserPage</Nav.Link>
-              <Nav.Link href="/Login">Login</Nav.Link>
+              {Auth.loggedIn() ? (<Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+              ) : (<Nav.Link href="/Login">Login</Nav.Link>)}
             </Nav>
           </Container>
         </Navbar>

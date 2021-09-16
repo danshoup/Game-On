@@ -1,30 +1,54 @@
 
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
+import { useMutation } from '@apollo/client';
 import { Link } from "react-router-dom";
 import "./LoginWeb.css";
+import { LOGIN_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 
+function Login(props) {
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [login, { error }] = useMutation(LOGIN_USER);
 
+  const handleFormSubmit = async event => {
+    event.preventDefault();
+    try {
+      const mutationResponse = await login({
+        variables: { email: formState.email, password: formState.password },
+      });
+      const token = mutationResponse.data.login.token;
+      Auth.login(token);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
-
-class Login extends Component {
-  render() {
     return (
-      <>
-      
-      
       <Card>
         <Card.Img src="/img/862202--1-@1x.png" alt="Carad image" />
         <Card.ImgOverlay>
         <Card.Img variant="top" src="/img/gameonlogo-2@1x.png" />
         <Card.Body>
-        <Form>
+        <Form onSubmit={handleFormSubmit}>
           <Form.Group className="mb-3 text-white" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Control   
+              placeholder="youremail@test.com"
+              name="email"
+              type="email"
+              id="email"
+              onChange={handleChange} />
             <Form.Text className="text-muted">
               We'll never share your email with anyone else.
             </Form.Text>
@@ -32,7 +56,12 @@ class Login extends Component {
 
           <Form.Group className="mb-3 text-white" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
+            <Form.Control    
+              placeholder="******"
+              name="password"
+              type="password"
+              id="pwd"
+              onChange={handleChange} />
           </Form.Group>
           <Button variant="primary" type="submit">
             Login
@@ -44,9 +73,7 @@ class Login extends Component {
         </Card.Body>
         </Card.ImgOverlay>
       </Card>
-      </>
     );
-  }
-}
+  };
 
 export default Login
