@@ -1,37 +1,38 @@
-[{
-  "_id": {
-    "$oid": "613cf60401c9593326a88c89"
+[
+  {
+    "name": "Barry",
+    "email": "barry@gameon.com",
+    "password": "password12345",
+    "zipCode": "48228"
   },
-  "name": "ianwins",
-  "email": "ian.hennessey@gmail.com",
-  "password": "$2b$10$V8Osf7WH4XlW/ptRpvfkg.UwQIcsJrJW6qDuUZIclgj49n5u0/dRe",
-  "zipCode": "48840",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "613fdd4b1deb9512b2808c44"
+  {
+    "name": "Ian",
+    "email": "ian@gameon.com",
+    "password": "password12345",
+    "zipCode": "48228"
   },
-  "name": "barrysp",
-  "email": "barry@email.com",
-  "password": "$2b$10$CHowIi3olHpxhMMwubsKJeyEVyQitqYtmyOrtnOWf5rnIpbxWV4MO",
-  "zipCode": "48108",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "613fddf06686221302bb1376"
+  {    
+    "name": "Diana",
+    "email": "diana@gameon.com",
+    "password": "password12345",
+    "zipCode": "48126"
   },
-  "name": "diana",
-  "email": "diana@email.com",
-  "password": "$2b$10$nlGthMK9atORZBCk1s1meeiFxhzKgdHfq1.RmfFVnc48ODCwvNVv6",
-  "zipCode": "48125",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "613fde7e6686221302bb1378"
+  {    
+    "name": "Jamie",
+    "email": "jamie@gameon.com",
+    "password": "password12345",
+    "zipCode": "48126"
   },
-  "name": "diana2",
-  "email": "diana2@email.com",
-  "password": "$2b$10$nhDahx8iXpVjEQkS8//Qz.TbXN./uUC7nZWA6iT.tmbHFDl9m3eL.",
-  "zipCode": "48125",
-  "__v": 0
-}]
+  {    
+    "name": "Olja",
+    "email": "olja@gameon.com",
+    "password": "password12345",
+    "zipCode": "48226"
+  },
+  {
+     "name": "Daniel",
+    "email": "daniel@gameon.com",
+    "password": "password12345",
+    "zipCode": "48226"
+  }
+]
