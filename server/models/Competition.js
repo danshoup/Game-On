@@ -50,19 +50,6 @@ const competitionSchema = new Schema({
     type: Boolean,
     default: false
   },
-  stats: [
-    {
-      statName: {
-        type: String,
-        required: true,
-        minlength: 1,
-        maxlength: 30
-      },
-      statValue: {
-        type: String
-      }
-    },
-  ],
 });
 
 
