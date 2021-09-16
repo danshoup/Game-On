@@ -11,13 +11,7 @@
       "challengedScore": "8",
       "category": "Cards",
       "status": "Completed",
-      "resultsConfirmed": "true",
-      "stats": [
-        {
-        "statName": "", 
-        "statValue": ""
-        }
-      ]
+      "resultsConfirmed": "true"
     },
     {
     "name": "Red Dead Redemption 2",
@@ -25,19 +19,13 @@
     "organizer": "Ian",
     "challenged": "Barry",
     "challengedAccept": "true",
-    "date": "",
+    "date": "8/30/21",
     "victor": "Ian",
     "organizerScore": "1",
     "challengedScore": "0",
     "category": "Gaming",
     "status": "Completed",
-    "resultsConfirmed": "false",
-    "stats": [
-        {
-        "statName": "", 
-        "statValue": ""
-        }
-        ]
+    "resultsConfirmed": "false"
     },
     {    
     "name": "8-Ball",
@@ -51,13 +39,7 @@
     "challengedScore": "",
     "category": "Billiards",
     "status": "Incomplete",
-    "resultsConfirmed": "false",
-    "stats": [
-        {
-        "statName": "", 
-        "statValue": ""
-        }
-    ]
+    "resultsConfirmed": "false"
     },
     {    
     "name": "Basketball",
@@ -71,13 +53,7 @@
     "challengedScore": "40",
     "category": "Sports",
     "status": "Completed",
-    "resultsConfirmed": "true",
-    "stats": [
-        {
-        "statName": "", 
-        "statValue": ""
-        }
-    ]
+    "resultsConfirmed": "true"
     },
     {    
     "name": "9-Ball",
@@ -91,13 +67,7 @@
     "challengedScore": "",
     "category": "Billiards",
     "status": "Incomplete",
-    "resultsConfirmed": "false",
-    "stats": [
-        {
-        "statName": "", 
-        "statValue": ""
-        }
-    ]
+    "resultsConfirmed": "false"
     },
     {
     "name": "Call of Duty",
@@ -111,13 +81,7 @@
     "challengedScore": "0",
     "category": "Gaming",
     "status": "Completed",
-    "resultsConfirmed": "true",
-    "stats": [
-        {
-        "statName": "", 
-        "statValue": ""
-        }
-    ]
+    "resultsConfirmed": "true"
     }
   ]
   

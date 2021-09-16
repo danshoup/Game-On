@@ -7,25 +7,21 @@ const competitionData = require('./competitionData.json');
 db.once('open', async () => {
   await Category.deleteMany();
 
-  const categories = await Category.insertMany([
-    {categoryData}
-  ]);
+  const categories = await Category.insertMany(categoryData);
 
   console.log(categories + "seeded");
 
 await Competition.deleteMany();
 
-const competitions = await Competition.insertMany([
-  {competitionData}
-]);
+const competitions = await Competition.insertMany(competitionData);
 
 console.log(competitions + "seeded");
 
 await User.deleteMany();
 
-await User.create({userData});
+await User.create(userData);
 
 console.log('users seeded');
 
-process.exit();
+process.exit(0);
 });
