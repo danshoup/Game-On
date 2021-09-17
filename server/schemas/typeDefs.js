@@ -44,7 +44,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(name: String!, email: String!, password: String!, zipCode: String!): Auth
     createCompetition(name: String!, location: String!, organizer: String!, challenged: String!, date: String!, category: String!): Competition
-    updateCompetition(_id: ID!, victor: String, organizerScore: String, challengedScore: String, status: String): Competition
+    updateCompetition(_id: ID!, victor: String!, organizerScore: String!, challengedScore: String!, status: String!): Competition
     confirmCompetition(_id: ID!, resultsConfirmed: Boolean!): Competition
     createStats(_id: ID!, statValue: String!): Competition
   }
