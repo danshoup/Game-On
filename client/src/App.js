@@ -48,7 +48,7 @@ function App() {
     
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-center align-center min-100-vh bg-secondary">
+        <div className="flex-column justify-center align-center min-100-vh bg-dark">
 
         <Navbar bg="dark" variant="dark">
           <Container>
