@@ -1,4 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
+import { useQuery} from '@apollo/client';
+import { QUERY_WIN, QUERY_LOSS, QUERY_TIES } from '../utils/queries'
+import Auth from '../utils/auth'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
@@ -6,8 +9,29 @@ import Figure from 'react-bootstrap/Figure'
 import Table from 'react-bootstrap/Table'
 import Dropdown from 'react-bootstrap/Dropdown'
 
-class UserPage extends Component {
-  render() {
+// class UserPage extends Component {
+//   render() {
+
+const UserPage = () => {
+  const winObj = useQuery(QUERY_WIN);
+  const tieObj = useQuery(QUERY_TIES);
+  const { data, error, loading} = useQuery(QUERY_LOSS);
+
+  if (loading) {
+    return <h2>LOADING...</h2>
+  }
+  
+  console.log(winObj)
+  console.log(tieObj)
+  console.log(data)
+
+  const wins = winObj.data.wins.length
+  const ties = tieObj.data.ties.length
+  const loss = data.losses.length
+
+  let userData = Auth.getProfile();
+  let userName = userData.data.name;
+
 
     return (
       <>
@@ -25,7 +49,7 @@ class UserPage extends Component {
           src="/img/profileavatar.png"
           />
       </Figure>
-        <h1 className="font-weight-bold text-center text-white">Ian Hennessey
+        <h1 className="font-weight-bold text-center text-white">{userName}
         </h1>
         <Table striped bordered hover size="sm">
           <thead>
@@ -37,9 +61,9 @@ class UserPage extends Component {
           </thead>
           <tbody>
             <tr>
-              <td>24</td>
-              <td>15</td>
-              <td>2</td>
+              <td>{wins}</td>
+              <td>{loss}</td>
+              <td>{ties}</td>
             </tr>
           </tbody>
         </Table>
@@ -76,20 +100,10 @@ class UserPage extends Component {
       </Card.ImgOverlay>
 
       </Card>
-
-
-
-
-
-
-
-
-
-     
       </>
     )
 
   }
-}
+// }
 
 export default UserPage
