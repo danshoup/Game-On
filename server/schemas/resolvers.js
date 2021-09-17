@@ -15,7 +15,16 @@ const resolvers = {
         user: async (parent, {username}) => {
           const params = username ? { username } : {};
           return User.find(params);
-        }
+        },
+        wins: async (parent, args, context) => {
+          return Competition.find({$or: [{organizer: context.user.name}, {challenged: context.user.name}]}).where("victor").equals(context.user.name).where("resultsConfirmed").equals(true);
+        },
+        losses: async (parent, args, context) => {
+          return Competition.find({$or: [{organizer: context.user.name}, {challenged: context.user.name}]}).where("victor").ne(context.user.name).where("resultsConfirmed").equals(true);
+        },
+        ties: async (parent, args, context) => {
+          return Competition.find({$or: [{organizer: context.user.name}, {challenged: context.user.name}]}).where("victor").equals("draw").where("resultsConfirmed").equals(true);
+        },
     },
     Mutation: {
       login: async (parent, { email, password }) => {

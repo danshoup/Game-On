@@ -42,3 +42,63 @@ export const QUERY_COMPETITION = gql`
     }
   }
 `;
+
+export const QUERY_LOSS = gql`
+query losses {
+  losses {
+    _id
+    name
+    location
+    organizer
+    challenged
+    challengedAccept
+    date
+    victor
+    organizerScore
+    challengedScore
+    category
+    status
+    resultsConfirmed
+  }
+}
+`;
+
+export const QUERY_WIN = gql`
+query wins {
+  wins {
+    _id
+    name
+    location
+    organizer
+    challenged
+    challengedAccept
+    date
+    victor
+    organizerScore
+    challengedScore
+    category
+    status
+    resultsConfirmed
+  }
+}
+`;
+
+export const QUERY_TIES = gql`
+  query ties {
+    ties {
+      _id
+      name
+      location
+      organizer
+      challenged
+      challengedAccept
+      date
+      victor
+      organizerScore
+      challengedScore
+      category
+      status
+      resultsConfirmed
+    }
+  }
+`;
