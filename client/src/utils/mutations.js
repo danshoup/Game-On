@@ -115,16 +115,3 @@ export const CONFIRM_COMPETITION = gql`
     }
   }
 `;
-
-export const CREATE_STATS = gql`
-  mutation createStats(
-    $_id: String!, 
-    $statValue: String!) {
-      createStats(
-        _id: $_id,  
-        statValue: $statValue) {
-          _id
-          statValue
-    }
-  }
-`;
