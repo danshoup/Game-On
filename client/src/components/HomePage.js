@@ -17,7 +17,7 @@ class HomePage extends Component {
         <Card.Img src="/img/862202--1-@1x.png" alt="Carad image" />
         <Card.ImgOverlay>
         <h1 className="text-center text-white">Welcome To Game On; This is the Main Info Page</h1>
-        <Card.Img variant="top" src="/img/gameonlogo-2@1x.png" />
+        <Card.Img variant="top" src="/img/GameOnLogo.svg" />
         <Card.Body className="text-white">
           <Card.Title>The Spit-and-a-Handshake App</Card.Title>
             <Card.Text>

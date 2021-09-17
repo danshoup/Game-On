@@ -37,7 +37,7 @@ function ChallengeCreate(props) {
       <Card.Img src="/img/862202--1-@1x.png" alt="Card image" />
         <Card.ImgOverlay>
 
-      <h1 className="text-center text-white">Challenge An Opponent</h1>
+      <Card.Img variant="top" src="/img/GameOnLogo.svg" />
      <Form onSubmit={handleFormSubmit} className="signUp-form text-white">
         <h1 className="font-weight-bold text-center text-white">Matchup
         </h1>
