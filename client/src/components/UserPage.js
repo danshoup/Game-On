@@ -32,6 +32,39 @@ const UserPage = () => {
   let userData = Auth.getProfile();
   let userName = userData.data.name;
 
+  const profile = {
+    color: "#00FC2A",
+    fontFamily: "Good Times",
+    display: "flex",
+    justifyContent: "center",
+    alignItem: "center"
+  }
+  const name = {
+    color: "#00FC2A",
+    fontFamily: "Good Times",
+    fontSize: "25px",
+  }
+  const stats = {
+    fontFamily: "Good Times",
+    background: "white"
+  }
+  const challenges = {
+    display: "flex",
+    flexDirection: "row",
+    margin: "0 auto",
+    justifyContent: "center",
+    alignItem: "center",
+
+
+  }
+  const chalbut = {
+    margin: "0 auto",
+    display: "block",
+  }
+  const color = {
+      backgroundColor: "red"
+  }
+
 
     return (
       <>
@@ -39,9 +72,9 @@ const UserPage = () => {
       <Card.Img src="/img/343962@1x.png" alt="Card image" />
         <Card.ImgOverlay>
 
-      <h1 className="text-center text-white">Profile</h1>
+      <h1 style={profile} className="text-center text-white">Profile</h1>
      <Form className="signUp-form text-white">
-      <Figure>
+      <Figure style={profile}>
         <Figure.Image
          width={171}
           height={180}
@@ -49,9 +82,9 @@ const UserPage = () => {
           src="/img/profileavatar.png"
           />
       </Figure>
-        <h1 className="font-weight-bold text-center text-white">{userName}
+        <h1 style={name}className="font-weight-bold text-center text-white">{userName}
         </h1>
-        <Table striped bordered hover size="sm">
+        <Table style={stats}striped bordered hover size="sm">
           <thead>
             <tr>
               <th>Wins</th>
@@ -67,29 +100,31 @@ const UserPage = () => {
             </tr>
           </tbody>
         </Table>
-        <Dropdown>
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
-            Current Challenges
-          </Dropdown.Toggle>
+        <div style={challenges}>
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              Current Challenges
+            </Dropdown.Toggle>
 
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-        <Dropdown>
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
-            Previous Challenges
-          </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <Dropdown>
+            <Dropdown.Toggle style={color} variant="success" id="dropdown-basic">
+              Previous Challenges
+            </Dropdown.Toggle>
 
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-        <Button className="btn-lg">
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+         </div> 
+        <Button style={chalbut}className="btn-lg">
           Challenge Someone
          </Button>
        
