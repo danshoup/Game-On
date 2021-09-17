@@ -36,7 +36,7 @@ const typeDefs = gql`
 
   type Query {
     user: [User]
-    category: [Category]
+    category(_id: ID): [Category]
     competition(_id: ID): [Competition]
     wins: [Competition]
     losses: [Competition]
