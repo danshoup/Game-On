@@ -1,15 +1,31 @@
 import React, { Component, useState } from 'react';
-import { useMutation } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 // import "./LoginWeb.css";
 import { CREATE_COMPETITION } from '../utils/mutations';
 import Auth from '../utils/auth';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
+import { QUERY_CATEGORY } from '../utils/queries';
 
 function ChallengeCreate(props) {
   const [formState, setFormState] = useState({ name: '', location: '', organizer: '', challenged: '', date: '', category: ''});
   const [ChallengeCreate, { error }] = useMutation( CREATE_COMPETITION);
+
+
+  // const { categories, cError, loading } = useQuery(QUERY_CATEGORY);
+  // const categoryList = categories;
+
+  // if (loading) {
+  //   return <h2>LOADING...</h2>
+  // }
+
+  // console.log(categories);
+
+  // for (let i = 0; i < categoryList.length; i++) {
+  //   console.log(categoryList[i]);
+  // }
+
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -46,12 +62,9 @@ function ChallengeCreate(props) {
         </h6>
         <Form.Group>
           <Form.Label>Competition Category</Form.Label>
-          <Form.Control 
-          type="name" 
-          placeholder="Competition Category"
-          category="category"
-          id="email"
-          onChange={handleChange}/>
+          <Form.Select aria-label="Select challenge category">
+          <option>Select a category</option>
+          </Form.Select>
         </Form.Group>
         <Form.Group>
           <Form.Label>Category Type</Form.Label>

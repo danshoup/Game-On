@@ -12,8 +12,17 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_CATEGORY = gql`
-  query categorys($_id: String) {
-      categorys(_id: $_id) {
+  query category($_id: ID) {
+      category(_id: $_id) {
+        _id
+        name
+      }
+  }
+  `;
+
+  export const QUERY_CATEGORIES = gql`
+  query categories {
+      categories {
         _id
         name
       }

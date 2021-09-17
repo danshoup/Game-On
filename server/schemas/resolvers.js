@@ -5,8 +5,9 @@ const { AuthenticationError } = require('apollo-server-express');
 // Need to incorporate User model within query
 const resolvers = {
     Query: {
-        category: async () => {
-          return Category.find({});
+        category: async (parent, { _id }) => {
+          const params = _id ? { _id } : {};
+          return Category.find(params);
         },
         competition: async (parent, { _id }) => {
             const params = _id ? { _id } : {};
