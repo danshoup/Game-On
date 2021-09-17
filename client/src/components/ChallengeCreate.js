@@ -1,4 +1,6 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useEffect, useState } from 'react';
+import { Typeahead } from 'react-bootstrap-typeahead';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
 import { useQuery, useMutation } from '@apollo/client';
 // import "./LoginWeb.css";
 import { CREATE_COMPETITION } from '../utils/mutations';
@@ -7,25 +9,42 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import { QUERY_CATEGORY } from '../utils/queries';
+import { QUERY_USER } from '../utils/queries';
 
 function ChallengeCreate(props) {
   const [formState, setFormState] = useState({ name: '', location: '', organizer: '', challenged: '', date: '', category: ''});
   const [ChallengeCreate, { error }] = useMutation( CREATE_COMPETITION);
-  let categoryList=[]
+  let categoryList=[];
+  let userList = [];
 
+  // Get the list of categories
   const { data, cError, loading } = useQuery(QUERY_CATEGORY);
   
   if (loading) {
     return <h2>LOADING...</h2>
   }
-
-  console.log(data);
   
   data.category.forEach(element => {
     categoryList.push(element.name)
   });
-  console.log(categoryList)
 
+  // Get the list of users
+  useEffect(() => {
+    if(!loading) {
+      const { userdata, uError, userloading } = useQuery(QUERY_USER);
+      
+      if (userloading) {
+        return <h2>LOADING...</h2>
+      }
+      
+      userdata.user.forEach(element => {
+        userList.push(element.name)
+      });      
+    }
+  })
+
+  
+  // Handle the data upon clicking the submit button
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -39,6 +58,7 @@ function ChallengeCreate(props) {
     }
   };
 
+  // Updatet he form state as data is updated in the form.
   const handleChange = event => {
     const { name, value } = event.target;
     setFormState({
@@ -99,12 +119,14 @@ function ChallengeCreate(props) {
           onChange={handleChange} />
         </Form.Group>
         <Form.Group>
-        <Form.Label for="exampleSearch"></Form.Label>
-          <Form.Control
-          type="search"
+        <Form.Label>Person to challenge</Form.Label>
+        {/* <Form.Control */}
+        <Typeahead
+          type="text"
           name="cahllenged"
           controlId="challenged"
-          placeholder="search"
+          placeholder="Start typing a user name"
+          onChange={handleChange}
           />
         </Form.Group>
         <Button type="submit" className="btn-lg">
