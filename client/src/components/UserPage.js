@@ -18,7 +18,7 @@ const UserPage = () => {
   const tieObj = useQuery(QUERY_TIES);
   const { data, error, loading} = useQuery(QUERY_LOSS);
 
-  if (loading) {
+  if (loading || winObj.loading || tieObj.loading) {
     return <h2>LOADING...</h2>
   }
   
