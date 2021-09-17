@@ -13,14 +13,29 @@ function ChallengeCreate(props) {
   const [ChallengeCreate, { error }] = useMutation( CREATE_COMPETITION);
 
 
-  // const { categories, cError, loading } = useQuery(QUERY_CATEGORY);
-  // const categoryList = categories;
+  const { data, cError, loading } = useQuery(QUERY_CATEGORY);
+  const categoryList = data;
+  // const categoryList = [
+  //   {
+  //     "_id": "6143c8620d3dc4a4abefa76d",
+  //     "name": "Sports"
+  //   },
+  //   {
+  //     "_id": "6143c8620d3dc4a4abefa76e",
+  //     "name": "Gaming"
+  //   },
+  //   {
+  //     "_id": "6143c8620d3dc4a4abefa76f",
+  //     "name": "Cards"
+  //   }
+  // ]
 
-  // if (loading) {
-  //   return <h2>LOADING...</h2>
-  // }
+  if (loading) {
+    return <h2>LOADING...</h2>
+  }
 
-  // console.log(categories);
+  console.log(data);
+  // console.log(categoryList.length);
 
   // for (let i = 0; i < categoryList.length; i++) {
   //   console.log(categoryList[i]);
@@ -62,8 +77,11 @@ function ChallengeCreate(props) {
         </h6>
         <Form.Group>
           <Form.Label>Competition Category</Form.Label>
-          <Form.Select aria-label="Select challenge category">
+          <Form.Select aria-label="Select challenge category" name="category">
           <option>Select a category</option>
+          {/* {categoryList.map((category) => {
+            <option key={category._id} value={category.name}>{category.name}</option>
+          })} */}
           </Form.Select>
         </Form.Group>
         <Form.Group>
