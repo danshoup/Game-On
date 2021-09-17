@@ -33,7 +33,7 @@ function ChallengeCreate(props) {
   userData.data.user.forEach(element => {
     userList.push(element.name)
   });
-  
+  console.log(userList)
   // Handle the data upon clicking the submit button
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -113,10 +113,16 @@ function ChallengeCreate(props) {
         {/* <Form.Control */}
         <Typeahead
           type="text"
-          name="cahllenged"
+          name="challenged"
           controlId="challenged"
           placeholder="Start typing a user name"
-          onChange={handleChange}
+          onChange={(selected) => {
+            setFormState({
+              ...formState,
+              challenged: selected,
+            });
+          }}
+          options={userList}
           />
         </Form.Group>
         <Button type="submit" className="btn-lg">
