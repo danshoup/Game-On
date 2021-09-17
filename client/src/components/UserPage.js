@@ -65,6 +65,16 @@ const UserPage = () => {
       backgroundColor: "red"
   }
 
+  const handleCreateChallenge = async event => {
+    try {
+      const home = window.location.origin;
+      const newPage = home + "/challengecreate";
+      window.location.href = newPage;
+
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
     return (
       <>
@@ -124,7 +134,7 @@ const UserPage = () => {
             </Dropdown.Menu>
           </Dropdown>
          </div> 
-        <Button style={chalbut}className="btn-lg">
+        <Button style={chalbut}className="btn-lg" onClick={handleCreateChallenge}>
           Challenge Someone
          </Button>
        
