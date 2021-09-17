@@ -61,7 +61,10 @@ function ChallengeCreate(props) {
         </h6>
         <Form.Group>
           <Form.Label>Competition Category</Form.Label>
-          <Form.Select aria-label="Select challenge category" name="category">
+          <Form.Select 
+            aria-label="Select challenge category" 
+            controlId="category"
+            name="category">
           <option>Select a category</option>
           {categoryList.map((category) => 
             <option key={category} value={category}>{category}</option>
@@ -69,11 +72,12 @@ function ChallengeCreate(props) {
           </Form.Select>
         </Form.Group>
         <Form.Group>
-          <Form.Label>Category Type</Form.Label>
+          <Form.Label>Competion Name</Form.Label>
           <Form.Control 
-          type="name" 
-          placeholder="Pool"
-          id="email"
+          type="text" 
+          placeholder="The Thrilla in Manilla"
+          controlId="name"
+          name="name"
           onChange={handleChange} />
         </Form.Group>
         <Form.Group>
@@ -81,23 +85,25 @@ function ChallengeCreate(props) {
           <Form.Control 
           type="text" 
           placeholder="Location"
-          id="email"
+          controlId="location"
+          name="location"
           onChange={handleChange} />
         </Form.Group>
         <Form.Group>
           <Form.Label>Date</Form.Label>
           <Form.Control 
           type="text" 
-          placeholder="Event Date"
-          id="email"
+          placeholder="Event Date: MM/DD/YYYY"
+          controlId="date"
+          name="date"
           onChange={handleChange} />
         </Form.Group>
         <Form.Group>
         <Form.Label for="exampleSearch"></Form.Label>
           <Form.Control
           type="search"
-          name="search"
-          id="exampleSearch"
+          name="cahllenged"
+          controlId="challenged"
           placeholder="search"
           />
         </Form.Group>
