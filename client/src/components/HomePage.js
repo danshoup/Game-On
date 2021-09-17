@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
+import Auth from '../utils/auth'
 
 
 
@@ -30,6 +31,8 @@ class HomePage extends Component {
              Just signup, or login, create a challenge, and find a friend to prove you're competitive prowess.
             </Card.Text>
         </Card.Body>
+        {Auth.loggedIn() ? ("") : (
+        <>
         <Button variant="primary" type="submit">
             Login
           </Button>
@@ -37,6 +40,8 @@ class HomePage extends Component {
         <Card.Body>
           <Card.Link className="text-center" href="/SignUp">Don't have an account? Click here!</Card.Link>
         </Card.Body>
+        </>
+        )}
         </Card.ImgOverlay>
       </Card>
       
