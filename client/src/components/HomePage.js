@@ -14,18 +14,31 @@ class HomePage extends Component {
     const logo = {
       height: "25rem",
     }
+
+    const padding = {
+      paddingBottom: "10px"
+    }
     
+    const loginButton = {
+      width: "45%"
+    }
+
+    const backgroundImg = {
+      margin: "0",
+      padding: "0",
+      minHeight: "100vh"
+    }
     return (
       <>
     
       
       <Card className="text-center">
-        <Card.Img src="/img/862202--1-@1x.png" alt="Carad image" />
+        <Card.Img style={backgroundImg} src="/img/862202--1-@1x.png" alt="Carad image" />
         <Card.ImgOverlay>
         <Card.Img style={logo} variant="top" src="/img/GameOnLogo.svg" />
         <Card.Body className="text-white">
-          <Card.Title>The Spit-and-a-Handshake App</Card.Title>
-            <Card.Text>
+          <Card.Title style={padding} >The Spit-and-a-Handshake App</Card.Title>
+            <Card.Text style={padding}>
              Do you want to challenge someone to a duel? (Well, maybe not a REAL duel...)
 
              How about a friendly game of "H-O-R-S-E"? A quick tennis match? A round of 8-Ball? 
@@ -37,7 +50,7 @@ class HomePage extends Component {
         </Card.Body>
         {Auth.loggedIn() ? ("") : (
         <>
-        <Button variant="primary" type="submit">
+        <Button style={loginButton} size="lg" variant="primary" type="submit">
             Login
           </Button>
 
