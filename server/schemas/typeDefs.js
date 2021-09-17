@@ -38,6 +38,9 @@ const typeDefs = gql`
     user: [User]
     category: [Category]
     competition(_id: ID): [Competition]
+    wins: [Competition]
+    losses: [Competition]
+    ties: [Competition]
   }
 
   type Mutation {
