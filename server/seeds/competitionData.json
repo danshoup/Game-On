@@ -1,0 +1,87 @@
+[
+    {
+      "name": "Euchre",
+      "location": "Kensington Park",
+      "organizer": "Barry",
+      "challenged": "Ian",
+      "challengedAccept": "true",
+      "date": "8/15/21",
+      "victor": "Barry",
+      "organizerScore": "11",
+      "challengedScore": "8",
+      "category": "Cards",
+      "status": "Completed",
+      "resultsConfirmed": "true"
+    },
+    {
+    "name": "Red Dead Redemption 2",
+    "location": "Ferndale Public Library",
+    "organizer": "Ian",
+    "challenged": "Barry",
+    "challengedAccept": "true",
+    "date": "8/30/21",
+    "victor": "Ian",
+    "organizerScore": "1",
+    "challengedScore": "0",
+    "category": "Gaming",
+    "status": "Completed",
+    "resultsConfirmed": "false"
+    },
+    {    
+    "name": "8-Ball",
+    "location": "Bill's Recreation",
+    "organizer": "Diana",
+    "challenged": "Jamie",
+    "challengedAccept": "false",
+    "date": "5/22/21",
+    "victor": "",
+    "organizerScore": "",
+    "challengedScore": "",
+    "category": "Billiards",
+    "status": "Incomplete",
+    "resultsConfirmed": "false"
+    },
+    {    
+    "name": "Basketball",
+    "location": "YMCA",
+    "organizer": "Jamie",
+    "challenged": "Diana",
+    "challengedAccept": "true",
+    "date": "7/2/21",
+    "victor": "Jamie",
+    "organizerScore": "45",
+    "challengedScore": "40",
+    "category": "Sports",
+    "status": "Completed",
+    "resultsConfirmed": "true"
+    },
+    {    
+    "name": "9-Ball",
+    "location": "Big League Pool Hall",
+    "organizer": "Olja",
+    "challenged": "Daniel",
+    "challengedAccept": "true",
+    "date": "10/21/21",
+    "victor": "",
+    "organizerScore": "",
+    "challengedScore": "",
+    "category": "Billiards",
+    "status": "Incomplete",
+    "resultsConfirmed": "false"
+    },
+    {
+    "name": "Call of Duty",
+    "location": "Detroit Public Library",
+    "organizer": "Daniel",
+    "challenged": "Olja",
+    "challengedAccept": "true",
+    "date": "9/1/21",
+    "victor": "Olja",
+    "organizerScore": "1",
+    "challengedScore": "0",
+    "category": "Gaming",
+    "status": "Completed",
+    "resultsConfirmed": "true"
+    }
+  ]
+  
