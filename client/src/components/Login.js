@@ -38,7 +38,7 @@ function Login(props) {
       <Card>
         <Card.Img src="/img/862202--1-@1x.png" alt="Carad image" />
         <Card.ImgOverlay>
-        <Card.Img variant="top" src="/img/gameonlogo-2@1x.png" />
+        <Card.Img variant="top" src="/img/GameOnLogo.svg" />
         <Card.Body>
         <Form onSubmit={handleFormSubmit}>
           <Form.Group className="mb-3 text-white" controlId="formBasicEmail">
