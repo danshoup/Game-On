@@ -54,15 +54,13 @@ export const CREATE_CATEGORY = gql`
 
 export const CREATE_COMPETITION = gql`
   mutation createCompetition(
-    $_id: String!, 
     $name: String!, 
     $location: String!, 
     $organizer: String!, 
     $challenged: String!,
-    $date: Date!,
+    $date: String!,
     $category: String!) {
     createCompetition(
-      _id: $_id, 
       name: $name, 
       location: $location, 
       organizer: $organizer, 
@@ -75,7 +73,7 @@ export const CREATE_COMPETITION = gql`
         category
         organizer
         challenged
-        challengedAccepted
+        challengedAccept
         date
     }
   }

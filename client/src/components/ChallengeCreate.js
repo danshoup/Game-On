@@ -12,7 +12,10 @@ import { QUERY_CATEGORY } from '../utils/queries';
 import { QUERY_USER } from '../utils/queries';
 
 function ChallengeCreate(props) {
-  const [formState, setFormState] = useState({ name: '', location: '', organizer: '', challenged: '', date: '', category: ''});
+  let me = Auth.getProfile();
+  let organizer = me.data.name;
+
+  const [formState, setFormState] = useState({ name: '', location: '', organizer: organizer, challenged: '', date: '', category: ''});
   const [ChallengeCreate, { error }] = useMutation( CREATE_COMPETITION);
   let categoryList=[];
   let userList = [];
@@ -25,24 +28,32 @@ function ChallengeCreate(props) {
   if (loading || userData.loading) {
     return <h2>LOADING...</h2>
   }
-  console.log(userData)
-  console.log(data)
+
   data.category.forEach(element => {
     categoryList.push(element.name)
   });
   userData.data.user.forEach(element => {
     userList.push(element.name)
   });
-  console.log(userList)
+
   // Handle the data upon clicking the submit button
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
+
       const mutationResponse = await ChallengeCreate({
         variables: { name: formState.name, location: formState.location, organizer: formState.organizer, challenged: formState.challenged, date: formState.date, category: formState.category},
       });
+
       const token = mutationResponse.data.createCompetition.token;
-      Auth.ChallengeCreate(token);
+      console.log(mutationResponse);
+
+      let id = mutationResponse.data.createCompetition._id;
+
+      const home = window.location.origin;
+      const newPage = home + "//challengepage/:" + id;
+      window.location.href = newPage;
+
     } catch (e) {
       console.log(e);
     }
@@ -51,6 +62,7 @@ function ChallengeCreate(props) {
   // Updatet he form state as data is updated in the form.
   const handleChange = event => {
     const { name, value } = event.target;
+
     setFormState({
       ...formState,
       [name]: value,
@@ -73,8 +85,15 @@ function ChallengeCreate(props) {
           <Form.Label>Competition Category</Form.Label>
           <Form.Select 
             aria-label="Select challenge category" 
-            controlId="category"
-            name="category">
+            id="category"
+            name="category"
+            onChange={(selected) => {
+              const category = selected.target.value;
+              setFormState({
+                ...formState,
+                category: category,
+              });
+            }}>
           <option>Select a category</option>
           {categoryList.map((category) => 
             <option key={category} value={category}>{category}</option>
@@ -86,7 +105,7 @@ function ChallengeCreate(props) {
           <Form.Control 
           type="text" 
           placeholder="The Thrilla in Manilla"
-          controlId="name"
+          id="name"
           name="name"
           onChange={handleChange} />
         </Form.Group>
@@ -95,7 +114,7 @@ function ChallengeCreate(props) {
           <Form.Control 
           type="text" 
           placeholder="Location"
-          controlId="location"
+          id="location"
           name="location"
           onChange={handleChange} />
         </Form.Group>
@@ -104,7 +123,7 @@ function ChallengeCreate(props) {
           <Form.Control 
           type="text" 
           placeholder="Event Date: MM/DD/YYYY"
-          controlId="date"
+          id="date"
           name="date"
           onChange={handleChange} />
         </Form.Group>
@@ -113,13 +132,15 @@ function ChallengeCreate(props) {
         {/* <Form.Control */}
         <Typeahead
           type="text"
+          id="challenged"
           name="challenged"
           controlId="challenged"
           placeholder="Start typing a user name"
           onChange={(selected) => {
+            let challengedName = selected.toString()
             setFormState({
               ...formState,
-              challenged: selected,
+              challenged: challengedName,
             });
           }}
           options={userList}
