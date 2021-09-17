@@ -5,9 +5,10 @@ import Auth from '../utils/auth'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
-import Figure from 'react-bootstrap/Figure'
-import Table from 'react-bootstrap/Table'
-import Dropdown from 'react-bootstrap/Dropdown'
+import Figure from 'react-bootstrap/Figure';
+import Table from 'react-bootstrap/Table';
+import Dropdown from 'react-bootstrap/Dropdown';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 // class UserPage extends Component {
 //   render() {
@@ -17,7 +18,7 @@ const UserPage = () => {
   const tieObj = useQuery(QUERY_TIES);
   const { data, error, loading} = useQuery(QUERY_LOSS);
 
-  if (loading) {
+  if (loading || winObj.loading || tieObj.loading) {
     return <h2>LOADING...</h2>
   }
   
@@ -65,6 +66,16 @@ const UserPage = () => {
       backgroundColor: "red"
   }
 
+  const handleCreateChallenge = async event => {
+    try {
+      const home = window.location.origin;
+      const newPage = home + "/challengecreate";
+      window.location.href = newPage;
+
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
     return (
       <>
@@ -100,8 +111,28 @@ const UserPage = () => {
             </tr>
           </tbody>
         </Table>
-        <div style={challenges}>
-          <Dropdown>
+        {/* <div style={challenges}> */}
+
+        <Card style={{ width: '18rem' }} className="text-dark">
+          <ListGroup variant="flush">
+            <ListGroup.Item variant="success" as="h4">Current Challenges</ListGroup.Item>
+            <ListGroup.Item>Cras justo odio</ListGroup.Item>
+            <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+            <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+          </ListGroup>
+        </Card>
+        
+        <Card style={{ width: '18rem' }} className="text-dark">
+            <ListGroup variant="flush">
+              <ListGroup.Item variant="danger" as="h4">Previous Challenges</ListGroup.Item>
+              <ListGroup.Item>Cras justo odio</ListGroup.Item>
+              <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+              <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+            </ListGroup>
+        </Card>
+
+
+          {/* <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
               Current Challenges
             </Dropdown.Toggle>
@@ -122,9 +153,9 @@ const UserPage = () => {
               <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
               <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
             </Dropdown.Menu>
-          </Dropdown>
-         </div> 
-        <Button style={chalbut}className="btn-lg">
+          </Dropdown> */}
+         {/* </div>  */}
+        <Button style={chalbut}className="btn-lg" onClick={handleCreateChallenge}>
           Challenge Someone
          </Button>
        

@@ -52,8 +52,17 @@ function App() {
 
         <Navbar bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand href="/HomePage">GameOn</Navbar.Brand>
-            <Nav className="me-auto">
+            {/* <Navbar.Brand href="/HomePage">GameOn</Navbar.Brand> */}
+            <Navbar.Brand href="/">
+              <img
+                src="/img/GameOnLogo.svg"
+                width="300"
+                height="100"
+                className="d-inline-block align-top"
+                alt="GameOn logo"
+              />
+            </Navbar.Brand>
+            <Nav className="justify-content-end">
               <Nav.Link href="/HomePage">Home</Nav.Link>
               <Nav.Link href="/UserPage">UserPage</Nav.Link>
               {Auth.loggedIn() ? (<Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
