@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Barry",
+    "email": "barry@gameon.com",
+    "password": "password12345",
+    "zipCode": "48228"
+  },
+  {
+    "name": "Ian",
+    "email": "ian@gameon.com",
+    "password": "password12345",
+    "zipCode": "48228"
+  },
+  {    
+    "name": "Diana",
+    "email": "diana@gameon.com",
+    "password": "password12345",
+    "zipCode": "48126"
+  },
+  {    
+    "name": "Jamie",
+    "email": "jamie@gameon.com",
+    "password": "password12345",
+    "zipCode": "48126"
+  },
+  {    
+    "name": "Olja",
+    "email": "olja@gameon.com",
+    "password": "password12345",
+    "zipCode": "48226"
+  },
+  {
+     "name": "Daniel",
+    "email": "daniel@gameon.com",
+    "password": "password12345",
+    "zipCode": "48226"
+  }
+]
