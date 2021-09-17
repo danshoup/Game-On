@@ -19,23 +19,18 @@ function ChallengeCreate(props) {
 
   // Get the list of categories
   const { data, cError, loading } = useQuery(QUERY_CATEGORY);
-  
-  if (loading) {
+    // Get the list of users
+  const userData = useQuery(QUERY_USER);
+
+  if (loading || userData.loading) {
     return <h2>LOADING...</h2>
   }
-  
+  console.log(userData)
+  console.log(data)
   data.category.forEach(element => {
     categoryList.push(element.name)
   });
-
-  // Get the list of users
-  const { userdata, uError, userloading } = useQuery(QUERY_USER);
-  
-  if (userloading) {
-    return <h2>LOADING...</h2>
-  }
-  
-  userdata.user.forEach(element => {
+  userData.data.user.forEach(element => {
     userList.push(element.name)
   });
   
