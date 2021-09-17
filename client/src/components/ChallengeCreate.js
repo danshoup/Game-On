@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { Component, useState } from 'react';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import { useQuery, useMutation } from '@apollo/client';
@@ -29,20 +29,15 @@ function ChallengeCreate(props) {
   });
 
   // Get the list of users
-  useEffect(() => {
-    if(!loading) {
-      const { userdata, uError, userloading } = useQuery(QUERY_USER);
-      
-      if (userloading) {
-        return <h2>LOADING...</h2>
-      }
-      
-      userdata.user.forEach(element => {
-        userList.push(element.name)
-      });      
-    }
-  })
-
+  const { userdata, uError, userloading } = useQuery(QUERY_USER);
+  
+  if (userloading) {
+    return <h2>LOADING...</h2>
+  }
+  
+  userdata.user.forEach(element => {
+    userList.push(element.name)
+  });
   
   // Handle the data upon clicking the submit button
   const handleFormSubmit = async (event) => {
