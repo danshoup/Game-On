@@ -63,7 +63,6 @@ function App() {
               />
             </Navbar.Brand>
             <Nav className="justify-content-end">
-              <Nav.Link href="/HomePage">Home</Nav.Link>
               <Nav.Link href="/UserPage">UserPage</Nav.Link>
               {Auth.loggedIn() ? (<Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
               ) : (<Nav.Link href="/Login">Login</Nav.Link>)}
