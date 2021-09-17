@@ -10,15 +10,19 @@ import Auth from '../utils/auth'
 
 class HomePage extends Component {
   render() {
+
+    const logo = {
+      height: "25rem",
+    }
+    
     return (
       <>
-       
+    
       
-      <Card>
+      <Card className="text-center">
         <Card.Img src="/img/862202--1-@1x.png" alt="Carad image" />
         <Card.ImgOverlay>
-        <h1 className="text-center text-white">Welcome To Game On; This is the Main Info Page</h1>
-        <Card.Img variant="top" src="/img/GameOnLogo.svg" />
+        <Card.Img style={logo} variant="top" src="/img/GameOnLogo.svg" />
         <Card.Body className="text-white">
           <Card.Title>The Spit-and-a-Handshake App</Card.Title>
             <Card.Text>
@@ -38,7 +42,7 @@ class HomePage extends Component {
           </Button>
 
         <Card.Body>
-          <Card.Link className="text-center" href="/SignUp">Don't have an account? Click here!</Card.Link>
+          <Card.Link className="text-center text-light" href="/SignUp">Don't have an account? Click here!</Card.Link>
         </Card.Body>
         </>
         )}
