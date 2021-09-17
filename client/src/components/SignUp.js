@@ -18,6 +18,7 @@ function SignUp(props) {
         variables: { name: formState.name, email: formState.email, password: formState.password, zipCode: formState.zipCode },
       });
       const token = mutationResponse.data.addUser.token;
+      console.log(token);
       Auth.login(token);
     } catch (e) {
       console.log(e);
@@ -38,7 +39,9 @@ function SignUp(props) {
         <Card.ImgOverlay>
 
       <Form onSubmit={handleFormSubmit} className="SignUp-form">
-        <h1 className="font-weight-bold text-center text-white">Game On Sign-Up Page
+      <Card.Img variant="top" src="/img/GameOnLogo.svg" />
+
+        <h1 className="font-weight-bold text-center text-white">Sign-Up Here!
         </h1>
         <Form.Group>
           <Form.Label>Full Name</Form.Label>
