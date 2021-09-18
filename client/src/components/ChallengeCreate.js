@@ -69,21 +69,47 @@ function ChallengeCreate(props) {
     });
   };
 
+  const backgroundImg = {
+    margin: "0",
+    padding: "0",
+    minHeight: "100vh"
+  }
+
+  const logo = {
+    height: "20rem",
+  }
+  
+  const matchup = {
+    fontFamily: "Good Times",
+    color: "#00FC2A" 
+  }
+
+  const challengers = {
+    fontFamily: "Good Times",
+    color: "#00FC2A",
+    fontWeight: "900"
+  }
+
+  const padding  = {
+    marginBottom: "10px"
+  }
     return (
+      
       <Card>
-      <Card.Img src="/img/862202--1-@1x.png" alt="Card image" />
+      <Card.Img style={backgroundImg} src="/img/343962@1x.png" alt="Card image" />
         <Card.ImgOverlay>
 
-      <Card.Img variant="top" src="/img/GameOnLogo.svg" />
+      <Card.Img style={logo} variant="top" src="/img/GameOnLogo.svg" />
      <Form onSubmit={handleFormSubmit} className="signUp-form text-white">
-        <h1 className="font-weight-bold text-center text-white">Matchup
+        <h1 style={matchup} className="font-weight-bold text-center">Matchup
         </h1>
-        <h6 className="font-weight-bold text-center text-white">
+        <h6 style={challengers} className="font-weight-bold text-center">
           "organizer" VS. "challenged"
         </h6>
         <Form.Group>
           <Form.Label>Competition Category</Form.Label>
-          <Form.Select 
+          <Form.Select
+            style={padding} 
             aria-label="Select challenge category" 
             id="category"
             name="category"
@@ -102,7 +128,8 @@ function ChallengeCreate(props) {
         </Form.Group>
         <Form.Group>
           <Form.Label>Competion Name</Form.Label>
-          <Form.Control 
+          <Form.Control
+          style={padding} 
           type="text" 
           placeholder="The Thrilla in Manilla"
           id="name"
@@ -111,7 +138,8 @@ function ChallengeCreate(props) {
         </Form.Group>
         <Form.Group>
           <Form.Label>Location</Form.Label>
-          <Form.Control 
+          <Form.Control
+          style={padding} 
           type="text" 
           placeholder="Location"
           id="location"
@@ -120,7 +148,8 @@ function ChallengeCreate(props) {
         </Form.Group>
         <Form.Group>
           <Form.Label>Date</Form.Label>
-          <Form.Control 
+          <Form.Control
+          style={padding} 
           type="text" 
           placeholder="Event Date: MM/DD/YYYY"
           id="date"
@@ -131,6 +160,7 @@ function ChallengeCreate(props) {
         <Form.Label>Person to challenge</Form.Label>
         {/* <Form.Control */}
         <Typeahead
+          style={padding}
           type="text"
           id="challenged"
           name="challenged"
