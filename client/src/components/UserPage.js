@@ -167,36 +167,10 @@ const UserPage = () => {
             </ListGroup>
         </Card>
 
-
-          {/* <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              Current Challenges
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Dropdown>
-            <Dropdown.Toggle style={color} variant="success" id="dropdown-basic">
-              Previous Challenges
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown> */}
-         {/* </div>  */}
         <Button style={chalbut}className="btn-lg" onClick={handleCreateChallenge}>
           Challenge Someone
          </Button>
        
-      
-
       </Form>
 
       </Card.ImgOverlay>
