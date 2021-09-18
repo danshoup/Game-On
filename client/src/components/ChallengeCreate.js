@@ -51,7 +51,7 @@ function ChallengeCreate(props) {
       let id = mutationResponse.data.createCompetition._id;
 
       const home = window.location.origin;
-      const newPage = home + "//challengepage/:" + id;
+      const newPage = home + "/challengepage/:" + id;
       window.location.href = newPage;
 
     } catch (e) {

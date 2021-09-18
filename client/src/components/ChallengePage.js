@@ -7,17 +7,19 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import { QUERY_COMPETITION } from '../utils/queries';
+import { useEffect } from 'react';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 function ChallengePage(props) {
   let me = Auth.getProfile();
-  let organizerName = me.data.name;
+  let loggedInUser = me.data.name;
 
   const [formState, setFormState] = useState({  victor: '', organizerScore: '', challengedScore: '', status: '', resultsConfirmed: '' });
   const [ChallengeUpdate] = useMutation( UPDATE_COMPETITION);
   const [ChallengeConfirm] = useMutation( CONFIRM_COMPETITION);
 
   const home = window.location.href;
-  const id = home.split(":")[3];
+  const id = home.split(":")[-1];
 
   const { data, error, loading } = useQuery(QUERY_COMPETITION, {variables : {_id: id}});
 
@@ -33,15 +35,24 @@ function ChallengePage(props) {
 
   console.log(organizer);
   console.log(challenged);
+  console.log(loggedInUser)
 
   const handleFormSubmit = async event => {
     event.preventDefault();
+
     try {
-      const mutationResponse = await ChallengeUpdate({
-        variables: { _id: id, victor: formState.victor, organizerScore: formState.organizerScore, challengedScore: formState.challengedScore, status: formState.status, resultsConfirmed: formState.resultsConfirmed },
-      });
-     
-      console.log(mutationResponse);
+      if (organizer === loggedInUser) {
+        const mutationResponse = await ChallengeUpdate({
+          variables: { _id: id, victor: formState.victor, organizerScore: formState.organizerScore, challengedScore: formState.challengedScore, status: formState.status },
+        });
+        console.log(mutationResponse);
+      } else if (challenged === loggedInUser) {
+        const mutationResponse = await ChallengeConfirm({
+          variables: {_id: id, resultsConfirmed: (formState.resultsConfirmed === "on" ? true : false)  }
+        })
+        console.log(mutationResponse);
+      }
+      
 
     } catch (e) {
       console.log(e);
@@ -55,17 +66,53 @@ function ChallengePage(props) {
       [name]: value,
     });
   };
-
+   if (loggedInUser === challenged) {   
     return (
       <Card>
       <Card.Img src="/img/697142-1@1x.png" alt="Card image" />
         <Card.ImgOverlay>
-
+          
       <h1 className="text-center text-white">{data.competition[0].category}</h1>
+      
      <Form onSubmit={handleFormSubmit} className="signUp-form text-white">
         <h1 className="font-weight-bold text-center text-white">{organizer} vs. {challenged}
         </h1>
-      <Form.Group>
+         
+        <Card style={{ width: '18rem' }} className="text-dark">
+            <ListGroup variant="flush">
+            <ListGroup.Item variant="success" as="h4">Results from Organizer</ListGroup.Item>
+            <ListGroup.Item>Victor:  {data.competition[0].victor}</ListGroup.Item>
+            <ListGroup.Item>{organizer} score: {data.competition[0].organizerScore}</ListGroup.Item>
+            <ListGroup.Item>{challenged} score: {data.competition[0].challengedScore}</ListGroup.Item>
+            </ListGroup>
+        </Card>
+        
+        <Form.Group className="mb-3"  controlId="formBasicCheckbox">
+        <Form.Check
+        type="checkbox" 
+        name="resultsConfirmed" 
+        id="resultsConfirmed"
+        label="Results Confirmed"
+        onChange={handleChange} />
+      </Form.Group>
+      <Button type="submit" className="btn-lg">
+          Submit Results
+         </Button>
+      </Form>
+     </Card.ImgOverlay>
+      </Card>
+     )
+    } else {
+      return (
+        <Card>
+      <Card.Img src="/img/697142-1@1x.png" alt="Card image" />
+        <Card.ImgOverlay>
+          
+      <h1 className="text-center text-white">{data.competition[0].category}</h1>
+        <Form onSubmit={handleFormSubmit} className="signUp-form text-white">
+        <h1 className="font-weight-bold text-center text-white">{organizer} vs. {challenged}
+        </h1>
+        <Form.Group>
         <Form.Select 
             aria-label="Victor" 
             id="victor"
@@ -100,13 +147,15 @@ function ChallengePage(props) {
         </Form.Group>
         <Form.Group className="mb-3"  controlId="formBasicCheckbox">
         <Form.Check 
+        disabled
         type="checkbox" 
         name="resultsConfirmed" 
         id="resultsConfirmed"
         label="Results Confirmed"
         onChange={handleChange} />
       </Form.Group>
-
+      
+      
         <Button type="submit" className="btn-lg">
           Submit Results
          </Button>
@@ -118,8 +167,10 @@ function ChallengePage(props) {
       </Card.ImgOverlay>
 
       </Card>
-    );
+    ) 
   }
+}
+
 
 export default ChallengePage;
 
