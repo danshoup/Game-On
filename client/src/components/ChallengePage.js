@@ -35,6 +35,7 @@ function ChallengePage(props) {
 
   const organizer = data.competition[0].organizer;
   const challenged = data.competition[0].challenged;
+  const resultsConfirmed = data.competition[0].resultsConfirmed;
 
   console.log(organizer);
   console.log(challenged);
@@ -56,6 +57,9 @@ function ChallengePage(props) {
         console.log(mutationResponse);
       }
       
+      const home = window.location.origin;
+      const newPage = home + "/userpage";
+      window.location.href = newPage;
 
     } catch (e) {
       console.log(e);
@@ -95,8 +99,40 @@ function ChallengePage(props) {
       ...formState,
       [name]: value,
     });
-  };
-   if (loggedInUser === challenged) {   
+  }; 
+  
+  if ( resultsConfirmed ) {
+    return (
+      <Card>
+      <Card.Img src="/img/697142-1@1x.png" alt="Card image" />
+        <Card.ImgOverlay>
+          
+
+      <h1 style={gametype} className="text-center">{data.competition[0].name}</h1>
+
+      
+     <Form onSubmit={handleFormSubmit} className="signUp-form text-white">
+     <h1 style={challenger} className="font-weight-bold text-center text-white">{organizer}
+        </h1>
+        <h1 style={vs} className="font-weight-bold text-center"> vs. 
+        </h1>
+        <h1 style={otherperson} className="font-weight-bold text-center text-white">{challenged}
+        </h1>
+         
+        <Card style={{ width: '18rem' }} className="text-dark">
+            <ListGroup variant="flush">
+            <ListGroup.Item variant="success" as="h4">Results Confirmed</ListGroup.Item>
+            <ListGroup.Item>Victor:  {data.competition[0].victor}</ListGroup.Item>
+            <ListGroup.Item>{organizer} score: {data.competition[0].organizerScore}</ListGroup.Item>
+            <ListGroup.Item>{challenged} score: {data.competition[0].challengedScore}</ListGroup.Item>
+            </ListGroup>
+        </Card>
+        
+      </Form>
+     </Card.ImgOverlay>
+      </Card>
+     )
+  } else if (loggedInUser === challenged) {   
     return (
       <Card>
       <Card.Img src="/img/697142-1@1x.png" alt="Card image" />
