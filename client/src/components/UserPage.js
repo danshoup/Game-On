@@ -33,6 +33,16 @@ const UserPage = () => {
   let userData = Auth.getProfile();
   let userName = userData.data.name;
 
+  const handleCreateChallenge = async event => {
+    try {
+      const home = window.location.origin;
+      const newPage = home + "/challengecreate";
+      window.location.href = newPage;
+
+    } catch (e) {
+      console.log(e);
+    }
+  }
   const profile = {
     color: "#00FC2A",
     fontFamily: "Good Times",
@@ -49,6 +59,13 @@ const UserPage = () => {
     fontFamily: "Good Times",
     background: "white"
   }
+
+  const backgroundImg = {
+    margin: "0",
+    padding: "0",
+    minHeight: "100vh"
+  }
+
   const challenges = {
     display: "flex",
     flexDirection: "row",
@@ -62,25 +79,17 @@ const UserPage = () => {
     margin: "0 auto",
     display: "block",
   }
-  const color = {
-      backgroundColor: "red"
+
+  const card = {
+    marginBottom: "10px",
+    width: "18rem"
   }
 
-  const handleCreateChallenge = async event => {
-    try {
-      const home = window.location.origin;
-      const newPage = home + "/challengecreate";
-      window.location.href = newPage;
-
-    } catch (e) {
-      console.log(e);
-    }
-  }
 
     return (
       <>
       <Card>
-      <Card.Img src="/img/343962@1x.png" alt="Card image" />
+      <Card.Img style={backgroundImg} src="/img/343962@1x.png" alt="Card image" />
         <Card.ImgOverlay>
 
       <h1 style={profile} className="text-center text-white">Profile</h1>
@@ -112,9 +121,8 @@ const UserPage = () => {
           </tbody>
         </Table>
         {/* <div style={challenges}> */}
-
-        <Card style={{ width: '18rem' }} className="text-dark">
-          <ListGroup variant="flush">
+        <Card style={card} className="text-dark">
+          <ListGroup  variant="flush">
             <ListGroup.Item variant="success" as="h4">Current Challenges</ListGroup.Item>
             <ListGroup.Item>Cras justo odio</ListGroup.Item>
             <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
@@ -122,7 +130,7 @@ const UserPage = () => {
           </ListGroup>
         </Card>
         
-        <Card style={{ width: '18rem' }} className="text-dark">
+        <Card style={card} className="text-dark">
             <ListGroup variant="flush">
               <ListGroup.Item variant="danger" as="h4">Previous Challenges</ListGroup.Item>
               <ListGroup.Item>Cras justo odio</ListGroup.Item>
