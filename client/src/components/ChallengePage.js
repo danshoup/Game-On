@@ -61,6 +61,33 @@ function ChallengePage(props) {
       console.log(e);
     }
   };
+  const gametype = {
+    fontFamily: "Good Times",
+    fontSize: "70px",
+    color: "#00FC2A"
+  }
+
+  const challenger = {
+    fontFamily: "Good Times",
+    fontSize: "50px",
+  }
+
+  const otherperson = {
+    fontFamily: "Good Times",
+    fontSize: "50px",
+    marginBottom: "40px"
+  }
+
+  const text = {
+    fontFamily: "Good Times",
+    marginBottom: "20px"
+  }
+
+  const vs = {
+    fontFamily: "Good Times",
+    color: "#00FC2A"
+
+  }
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -75,10 +102,16 @@ function ChallengePage(props) {
       <Card.Img src="/img/697142-1@1x.png" alt="Card image" />
         <Card.ImgOverlay>
           
-      <h1 className="text-center text-white">{data.competition[0].name}</h1>
+
+      <h1 style={gametype} className="text-center">{data.competition[0].name}</h1>
+
       
      <Form onSubmit={handleFormSubmit} className="signUp-form text-white">
-        <h1 className="font-weight-bold text-center text-white">{organizer} vs. {challenged}
+     <h1 style={challenger} className="font-weight-bold text-center text-white">{organizer}
+        </h1>
+        <h1 style={vs} className="font-weight-bold text-center"> vs. 
+        </h1>
+        <h1 style={otherperson} className="font-weight-bold text-center text-white">{challenged}
         </h1>
          
         <Card style={{ width: '18rem' }} className="text-dark">
@@ -92,6 +125,7 @@ function ChallengePage(props) {
         
         <Form.Group className="mb-3"  controlId="formBasicCheckbox">
         <Form.Check
+        style={text}
         type="checkbox" 
         name="resultsConfirmed" 
         id="resultsConfirmed"
@@ -111,9 +145,15 @@ function ChallengePage(props) {
       <Card.Img src="/img/697142-1@1x.png" alt="Card image" />
         <Card.ImgOverlay>
           
-      <h1 className="text-center text-white">{data.competition[0].name}</h1>
+
+      <h1 style={gametype} className="text-center">{data.competition[0].name}</h1>
+
         <Form onSubmit={handleFormSubmit} className="signUp-form text-white">
-        <h1 className="font-weight-bold text-center text-white">{organizer} vs. {challenged}
+        <h1 style={challenger} className="font-weight-bold text-center text-white">{organizer}
+        </h1>
+        <h1 style={vs} className="font-weight-bold text-center"> vs. 
+        </h1>
+        <h1 style={otherperson} className="font-weight-bold text-center text-white">{challenged}
         </h1>
         <Form.Group>
         <Form.Select 
@@ -134,7 +174,7 @@ function ChallengePage(props) {
           </Form.Select>
           </Form.Group>
         <Form.Group>
-          <Form.Label>Score</Form.Label>
+          <Form.Label style={text}>Score</Form.Label>
           <Form.Control 
           name="organizerScore"
           type="text"
@@ -151,6 +191,7 @@ function ChallengePage(props) {
         <Form.Group className="mb-3"  controlId="formBasicCheckbox">
         <Form.Check 
         disabled
+        style={text}
         type="checkbox" 
         name="resultsConfirmed" 
         id="resultsConfirmed"
