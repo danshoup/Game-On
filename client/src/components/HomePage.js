@@ -46,7 +46,7 @@ class HomePage extends Component {
 
              Game-On can help you organize, and keep track of, your bets and challenges with friends. 
 
-             Just signup, or login, create a challenge, and find a friend to prove you're competitive prowess.
+             Just signup, or login, create a challenge, and find a friend to prove your competitive prowess.
             </Card.Text>
         </Card.Body>
         {Auth.loggedIn() ? ("") : (
