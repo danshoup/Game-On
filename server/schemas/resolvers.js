@@ -53,14 +53,14 @@ const resolvers = {
         return competition;
       },
       updateCompetition: async (parent, args) => {
-        const updatedCompetition = await Competition.findOneAndUpdate(
+        const updatedCompetition = await Competition.findByIdAndUpdate(
         args._id,
         { ...args},
         { new: true });
         return updatedCompetition;
       },
       confirmCompetition: async (parent, args) => {
-        const confirmedCompetition = await Competition.findOneAndUpdate(
+        const confirmedCompetition = await Competition.findByIdAndUpdate(
           args._id,
           {...args},
           { new: true });
