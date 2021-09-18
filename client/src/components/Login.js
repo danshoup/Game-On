@@ -20,6 +20,11 @@ function Login(props) {
       });
       const token = mutationResponse.data.login.token;
       Auth.login(token);
+
+      const home = window.location.origin;
+      const newPage = home + "/userpage";
+      window.location.href = newPage;
+
     } catch (e) {
       console.log(e);
     }
