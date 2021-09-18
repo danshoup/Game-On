@@ -16,7 +16,8 @@ class HomePage extends Component {
     }
 
     const padding = {
-      paddingBottom: "10px"
+      paddingBottom: "10px",
+      fontFamily: "Good Times"
     }
     
     const loginButton = {
@@ -38,7 +39,7 @@ class HomePage extends Component {
         <Card.Img style={logo} variant="top" src="/img/GameOnLogo.svg" />
         <Card.Body className="text-white">
           <Card.Title style={padding} >The Spit-and-a-Handshake App</Card.Title>
-            <Card.Text style={padding}>
+            <Card.Text >
              Do you want to challenge someone to a duel? (Well, maybe not a REAL duel...)
 
              How about a friendly game of "H-O-R-S-E"? A quick tennis match? A round of 8-Ball? 
@@ -55,7 +56,7 @@ class HomePage extends Component {
           </Button>
 
         <Card.Body>
-          <Card.Link className="text-center text-light" href="/SignUp">Don't have an account? Click here!</Card.Link>
+          <Card.Link style={padding} className="text-center text-light" href="/SignUp">Don't have an account? Click here!</Card.Link>
         </Card.Body>
         </>
         )}
