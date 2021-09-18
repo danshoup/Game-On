@@ -51,7 +51,7 @@ class HomePage extends Component {
         </Card.Body>
         {Auth.loggedIn() ? ("") : (
         <>
-        <Button style={loginButton} size="lg" variant="primary" type="submit">
+        <Button style={loginButton} size="lg" variant="primary" type="submit" href="/Login">
             Login
           </Button>
 
