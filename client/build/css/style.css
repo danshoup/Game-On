@@ -1,0 +1,22 @@
+  :root {
+    --turquoise: #73EEDC;
+    --deepSpace: #4B6A73;
+    --teal: #58878C;
+    --black: #04030F;
+    --charcoal: #3D4C59;
+    --white: #FFFFFF;
+  }
+
+
+  body {
+    font-family: Raleway, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 34px;
+    background-color: var(--teal);
+  }
+
+  main {
+    color: var(--white);
+    background-color: var(--teal);
+  }
+
