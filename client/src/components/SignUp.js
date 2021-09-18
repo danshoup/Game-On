@@ -32,19 +32,53 @@ function SignUp(props) {
       [name]: value,
     });
   };
+
+  const logo = {
+    height: "20rem",
+  }
+
+  const signuptext = {
+    fontFamily: "Good Times",
+    color: "#00FC2A"
+  }
+
+  const text = {
+    fontFamily: "Good Times",
+    color: "#00FC2A",
+    fontWeight: "900"
+  }
+
+  const textbox = {
+    width: "500px",
+    margin: "0 auto",
+    marginBottom: "10px"
+  }
+
+  const signUpButton = {
+    margin: "0 auto",
+    display: "block",
+    marginTop: "20px"
+  }
+
+  const backgroundImg = {
+    margin: "0",
+    padding: "0",
+    minHeight: "100vh"
+  }
+
     return (
       <>
-      <Card>
-      <Card.Img src="/img/862202--1-@1x.png" alt="Card image" />
+    <Card bg="dark">
+      <Card.Img style={backgroundImg} src="/img/344034@1x.png" alt="Card image" />
         <Card.ImgOverlay>
 
       <Form onSubmit={handleFormSubmit} className="SignUp-form">
-      <Card.Img variant="top" src="/img/GameOnLogo.svg" />
+      <Card.Img style={logo} variant="top" src="/img/GameOnLogo.svg" />
 
-        <h1 className="font-weight-bold text-center text-white">Sign-Up Here!
+        <h1 style={signuptext} className="font-weight-bold text-center">Sign-Up Here!
         </h1>
-        <Form.Group>
-          <Form.Label>Full Name</Form.Label>
+        <Form.Group style={textbox}>
+          <Form.Label style={text}>Full Name</Form.Label>
           <Form.Control 
           type="name" 
           placeholder="Full Name"
@@ -52,8 +86,8 @@ function SignUp(props) {
           id="email"
           onChange={handleChange} />
         </Form.Group>
-        <Form.Group>
-          <Form.Label>Email</Form.Label>
+        <Form.Group style={textbox}>
+          <Form.Label style={text}>Email</Form.Label>
           <Form.Control           
             placeholder="youremail@test.com"
             name="email"
@@ -61,16 +95,16 @@ function SignUp(props) {
             id="email"
             onChange={handleChange} />
         </Form.Group>
-        <Form.Group>
-          <Form.Label>Zip Code</Form.Label>
+        <Form.Group style={textbox}>
+          <Form.Label style={text}>Zip Code</Form.Label>
           <Form.Control 
             type="text" 
             placeholder="Zip Code"
             name="zipCode"
             id="email"/>
         </Form.Group>
-        <Form.Group>
-          <Form.Label>Password</Form.Label>
+        <Form.Group  style={textbox}>
+          <Form.Label style={text}>Password</Form.Label>
           <Form.Control     
             placeholder="******"
             name="password"
@@ -78,7 +112,7 @@ function SignUp(props) {
             id="password"
             onChange={handleChange}/>
       </Form.Group>
-        <Button type="submit" className="btn-lg btn-dark btn-block">
+        <Button style={signUpButton} type="submit" className="btn-lg btn-Primary btn-block">
           Sign Up
         </Button>
 
@@ -86,7 +120,7 @@ function SignUp(props) {
 
       </Card.ImgOverlay>
 
-      </Card>
+    </Card>
       </>
     );
   }
