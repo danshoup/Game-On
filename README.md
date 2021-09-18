@@ -1,6 +1,8 @@
 # Game-On
 
 ## Description
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 - Tasked with building a collaborative, Full-stack MERN appication, Game-ON, is an online "spit-and-handshake" sports competitive app. Using the Git branching workflow and Agile software development, our team was able to create React, MERN application allowing for user's to sign-up and login; giving them access to enter into competitions based on the categories, type of genre and location of a user. 
 - The Organizer has the option to challenge an opppenent by searching for their Username, selecting a category from the drop down box and then given an option to make a "wager"; whether that be monetary or verbal.
 - The user who is "challenged" has the option to reject or accept the competition.
@@ -15,7 +17,7 @@
   * [License](#license)
 
 ## Deployed Application
-* [Game On]()
+* [Game On](https://game-on-msu-2021.herokuapp.com/)
 
 ## Installation
 
@@ -32,12 +34,13 @@
 - The option to dispute the outcome of the competition is also available to the challenged opponent. 
 
 ## Screenshots
-![Home Screen](client/public/img/)
-![Sign Up](client/public/img/)
-![Login](client/public/img/)
-![User Profile](client/public/img/)
-![Create A Challenge](client/public/img/)
-![Confirm Victor and Score](client/public/img/)
+![Home Screen](client/public/img/launchScreen.png)
+![Sign Up](client/public/img/signUpPage.png)
+![Login](client/public/img/loginPage.png)
+![User Profile](client/public/img/userProfilePage.png)
+![Create A Challenge](client/public/img/createChallenge.gif)
+![Declare Victor and Score](client/public/img/enterResults.gif)
+![Confirm Results](client/public/img/confirmResults.gif)
 
 ## Credits
 This app uses the following libraries and modules: 
@@ -45,9 +48,12 @@ This app uses the following libraries and modules:
 * Express
 * Mongoose
 * Express.Router
+* graphQL
+* Apollo Sandbox (for building queries and mutations)
 * Compass for viewing the database
 * MongoDB
 * React.js
+* React-Bootstrap
 
 ## Collaborators
 * [Ian Hennessy](https://github.com/atleastitsanethosman)
@@ -59,3 +65,9 @@ This app uses the following libraries and modules:
 
 ## License
 Copyright 2021 Game-On
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+    
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
