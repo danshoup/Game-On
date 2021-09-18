@@ -1,10 +1,10 @@
 # Game-On
 
 ## Description
-- Tasked with building a collaborative, Full-stack MERN appication, Game-ON, is an online "spit-and-handshake" sports competitive app. Using the Git branching workflow and Agile software development, our team was able to create React, MERN application allowing for user's to sign-up and login; giving them access to enter into competitions based on the categories, skills and location of a user. 
-- The Organizer has the option to challenge an opppenent by searching for their Username or email, selecting a category from the drop down box and then given an option to make a "wager"; whether that be monetary or verbal.
+- Tasked with building a collaborative, Full-stack MERN appication, Game-ON, is an online "spit-and-handshake" sports competitive app. Using the Git branching workflow and Agile software development, our team was able to create React, MERN application allowing for user's to sign-up and login; giving them access to enter into competitions based on the categories, type of genre and location of a user. 
+- The Organizer has the option to challenge an opppenent by searching for their Username, selecting a category from the drop down box and then given an option to make a "wager"; whether that be monetary or verbal.
 - The user who is "challenged" has the option to reject or accept the competition.
-- If in agreement, the organizer and opponent will be able to tally scores, post those stats, declare a victor, and then those stats will be reflected in the User Profile.
+- If in agreement, the organizer and opponent will be able to tally scores, post those stats, declare a victor, and then those stats will be reflected in the User Profile (as Wins, Losses and Ties).
 
 ## Table of Contents
   * [Installation](#installation)
@@ -15,7 +15,7 @@
   * [License](#license)
 
 ## Deployed Application
-* [Budget Tracker]()
+* [Game On]()
 
 ## Installation
 
@@ -32,6 +32,12 @@
 - The option to dispute the outcome of the competition is also available to the challenged opponent. 
 
 ## Screenshots
+![Home Screen](client/public/img/)
+![Sign Up](client/public/img/)
+![Login](client/public/img/)
+![User Profile](client/public/img/)
+![Create A Challenge](client/public/img/)
+![Confirm Victor and Score](client/public/img/)
 
 ## Credits
 This app uses the following libraries and modules: 
