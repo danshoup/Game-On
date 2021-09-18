@@ -56,7 +56,7 @@ This app uses the following libraries and modules:
 * React-Bootstrap
 
 ## Collaborators
-* [Ian Hennessy](https://github.com/atleastitsanethosman)
+* [Ian Hennessey](https://github.com/atleastitsanethosman)
 * [Barry St. Pierre](https://github.com/bdstpierre)
 * [Olja PriyaKovich](https://github.com/oljapriya)
 * [Daniel Shoup](https://github.com/danshoup)
