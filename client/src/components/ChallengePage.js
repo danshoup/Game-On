@@ -19,7 +19,10 @@ function ChallengePage(props) {
   const [ChallengeConfirm] = useMutation( CONFIRM_COMPETITION);
 
   const home = window.location.href;
-  const id = home.split(":")[-1];
+  const idArray = home.split(":");
+  const id = idArray[idArray.length - 1];
+
+  console.log(`ID = ${id}`);
 
   const { data, error, loading } = useQuery(QUERY_COMPETITION, {variables : {_id: id}});
 
@@ -72,7 +75,7 @@ function ChallengePage(props) {
       <Card.Img src="/img/697142-1@1x.png" alt="Card image" />
         <Card.ImgOverlay>
           
-      <h1 className="text-center text-white">{data.competition[0].category}</h1>
+      <h1 className="text-center text-white">{data.competition[0].name}</h1>
       
      <Form onSubmit={handleFormSubmit} className="signUp-form text-white">
         <h1 className="font-weight-bold text-center text-white">{organizer} vs. {challenged}
@@ -108,7 +111,7 @@ function ChallengePage(props) {
       <Card.Img src="/img/697142-1@1x.png" alt="Card image" />
         <Card.ImgOverlay>
           
-      <h1 className="text-center text-white">{data.competition[0].category}</h1>
+      <h1 className="text-center text-white">{data.competition[0].name}</h1>
         <Form onSubmit={handleFormSubmit} className="signUp-form text-white">
         <h1 className="font-weight-bold text-center text-white">{organizer} vs. {challenged}
         </h1>

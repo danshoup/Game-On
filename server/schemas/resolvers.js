@@ -9,9 +9,9 @@ const resolvers = {
           const params = _id ? { _id } : {};
           return Category.find(params);
         },
-        competition: async (parent, { _id }) => {
+        competition: async (parent, { _id }, context) => {
             const params = _id ? { _id } : {};
-            return Competition.find(params);
+            return Competition.find(params).where({$or: [{organizer: context.user.name}, {challenged: context.user.name}]});
         },
         user: async (parent, {username}) => {
           const params = username ? { username } : {};

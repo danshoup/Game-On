@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import { useQuery} from '@apollo/client';
-import { QUERY_WIN, QUERY_LOSS, QUERY_TIES } from '../utils/queries'
+import { QUERY_WIN, QUERY_LOSS, QUERY_TIES, QUERY_COMPETITION } from '../utils/queries'
 import Auth from '../utils/auth'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -10,6 +10,9 @@ import Table from 'react-bootstrap/Table';
 import Dropdown from 'react-bootstrap/Dropdown';
 import ListGroup from 'react-bootstrap/ListGroup';
 
+let compActiveList = [];
+let compCompleteList = [];
+
 // class UserPage extends Component {
 //   render() {
 
@@ -17,14 +20,27 @@ const UserPage = () => {
   const winObj = useQuery(QUERY_WIN);
   const tieObj = useQuery(QUERY_TIES);
   const { data, error, loading} = useQuery(QUERY_LOSS);
+  const allComps = useQuery(QUERY_COMPETITION);
 
-  if (loading || winObj.loading || tieObj.loading) {
+  if (loading || winObj.loading || tieObj.loading || allComps.loading) {
     return <h2>LOADING...</h2>
   }
   
   console.log(winObj)
   console.log(tieObj)
   console.log(data)
+  console.log(allComps)
+
+  allComps.data.competition.forEach(element => {
+    if (element.resultsConfirmed) {
+      compCompleteList.push({ _id: element._id, name: element.name});
+    } else {
+      compActiveList.push({ _id: element._id, name: element.name})
+    }
+  });
+
+  console.log(compActiveList);
+  console.log(compCompleteList);
 
   const wins = winObj.data.wins.length
   const ties = tieObj.data.ties.length
@@ -124,18 +140,30 @@ const UserPage = () => {
         <Card style={card} className="text-dark">
           <ListGroup  variant="flush">
             <ListGroup.Item variant="success" as="h4">Current Challenges</ListGroup.Item>
-            <ListGroup.Item>Cras justo odio</ListGroup.Item>
-            <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-            <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+            {compActiveList.map((element) => {
+              return (<ListGroup.Item 
+                key={element._id} 
+                action href={
+                window.location.origin + "/challengepage/:" + element._id
+              }>
+              {element.name}</ListGroup.Item>)              
+            })}
+
           </ListGroup>
         </Card>
         
         <Card style={card} className="text-dark">
             <ListGroup variant="flush">
               <ListGroup.Item variant="danger" as="h4">Previous Challenges</ListGroup.Item>
-              <ListGroup.Item>Cras justo odio</ListGroup.Item>
-              <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-              <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+              {compCompleteList.map((element) => {
+              return (<ListGroup.Item 
+                key={element._id} 
+                action href={
+                window.location.origin + "/challengepage/:" + element._id
+              }>
+              {element.name}</ListGroup.Item>)              
+            })}
+
             </ListGroup>
         </Card>
 
