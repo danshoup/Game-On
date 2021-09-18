@@ -41,7 +41,7 @@ export const ADD_USER = gql`
 
 export const CREATE_CATEGORY = gql`
   mutation createCategory(
-    $_id: String!, 
+    $_id: ID!, 
     $name: String!) {
     createCategory(
       _id: $_id, 
@@ -81,7 +81,7 @@ export const CREATE_COMPETITION = gql`
 
 export const UPDATE_COMPETITION = gql`
   mutation udpateCompetition(
-    $_id: String!, 
+    $_id: ID!, 
     $victor: String!, 
     $organizerScore: String!, 
     $challengedScore: String!, 
@@ -103,7 +103,7 @@ export const UPDATE_COMPETITION = gql`
 
 export const CONFIRM_COMPETITION = gql`
   mutation confirmCompetition(
-    $_id: String!, 
+    $_id: ID!, 
     $resultsConfirmed: Boolean!) {
     confirmCompetition(
       _id: $_id, 

@@ -30,8 +30,8 @@ export const QUERY_CATEGORY = gql`
   `;
 
 export const QUERY_COMPETITION = gql`
-  query competitions($_id: String) {
-    competitions(_id: $_id) {
+  query competition($_id: ID) {
+    competition(_id: $_id) {
         _id
         name
         location
@@ -45,8 +45,6 @@ export const QUERY_COMPETITION = gql`
         challengedScore
         category
         status
-        statName
-        statValue
         resultsConfirmed
     }
   }
