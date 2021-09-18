@@ -61,11 +61,21 @@ function App() {
                 alt="GameOn logo"
               />
             </Navbar.Brand>
-            <Nav className="justify-content-end">
-              <Nav.Link href="/UserPage">UserPage</Nav.Link>
-              {Auth.loggedIn() ? (<Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
-              ) : (<Nav.Link href="/Login">Login</Nav.Link>)}
-            </Nav>
+
+            {Auth.loggedIn() ?
+            (
+              <Nav className="justify-content-end">
+                <Nav.Link href="/UserPage">UserPage</Nav.Link>
+                <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+              </Nav>
+
+            ):(
+              <Nav className="justify-content-end">
+                <Nav.Link href="/Login">Login</Nav.Link>
+              </Nav>
+
+            )}
+
           </Container>
         </Navbar>
         
