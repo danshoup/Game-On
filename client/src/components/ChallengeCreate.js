@@ -164,7 +164,7 @@ function ChallengeCreate(props) {
           type="text"
           id="challenged"
           name="challenged"
-          controlId="challenged"
+
           placeholder="Start typing a user name"
           onChange={(selected) => {
             let challengedName = selected.toString()
