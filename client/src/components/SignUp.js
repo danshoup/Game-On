@@ -43,12 +43,12 @@ function SignUp(props) {
   }
 
   const signuptext = {
-    fontFamily: "Good Times",
+    fontFamily: "good-times",
     color: "#00FC2A"
   }
 
   const text = {
-    fontFamily: "Good Times",
+    fontFamily: "good-times",
     color: "#00FC2A",
     fontWeight: "900"
   }

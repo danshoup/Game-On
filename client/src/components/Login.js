@@ -52,7 +52,7 @@ const signup = {
 const color = {
   color: "#00FC2A",
   fontWeight: "900",
-  fontFamily: "Good Times"
+  fontFamily: "good-times"
 }
 const backgroundImg = {
   margin: "0",

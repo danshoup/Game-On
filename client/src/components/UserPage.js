@@ -61,18 +61,18 @@ const UserPage = () => {
   }
   const profile = {
     color: "#00FC2A",
-    fontFamily: "Good Times",
+    fontFamily: "good-times",
     display: "flex",
     justifyContent: "center",
     alignItem: "center"
   }
   const name = {
     color: "#00FC2A",
-    fontFamily: "Good Times",
+    fontFamily: "good-times",
     fontSize: "25px",
   }
   const stats = {
-    fontFamily: "Good Times",
+    fontFamily: "good-times",
     background: "white"
   }
 
