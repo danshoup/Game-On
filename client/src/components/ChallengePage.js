@@ -66,29 +66,29 @@ function ChallengePage(props) {
     }
   };
   const gametype = {
-    fontFamily: "Good Times",
+    fontFamily: "good-times",
     fontSize: "70px",
     color: "#00FC2A"
   }
 
   const challenger = {
-    fontFamily: "Good Times",
+    fontFamily: "good-times",
     fontSize: "50px",
   }
 
   const otherperson = {
-    fontFamily: "Good Times",
+    fontFamily: "good-times",
     fontSize: "50px",
     marginBottom: "40px"
   }
 
   const text = {
-    fontFamily: "Good Times",
+    fontFamily: "good-times",
     marginBottom: "20px"
   }
 
   const vs = {
-    fontFamily: "Good Times",
+    fontFamily: "good-times",
     color: "#00FC2A"
 
   }

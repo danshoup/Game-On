@@ -80,12 +80,12 @@ function ChallengeCreate(props) {
   }
   
   const matchup = {
-    fontFamily: "Good Times",
+    fontFamily: "good-times",
     color: "#00FC2A" 
   }
 
   const challengers = {
-    fontFamily: "Good Times",
+    fontFamily: "good-times",
     color: "#00FC2A",
     fontWeight: "900"
   }

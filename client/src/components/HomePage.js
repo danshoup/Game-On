@@ -17,7 +17,7 @@ class HomePage extends Component {
 
     const padding = {
       paddingBottom: "10px",
-      fontFamily: "Good Times"
+      fontFamily: "good-times"
     }
     
     const loginButton = {
